@@ -1,151 +1,894 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <title>Chatbot Qwen</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmad Raja Fadhil | Data Scientist & AI Engineer</title>
 
-    #chat-container {
-      width: 90%;
-      max-width: 600px;
-      height: 600px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    #chat-log {
-      flex-grow: 1;
-      padding: 15px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    .message {
-      margin: 8px 0;
-      padding: 10px 14px;
-      border-radius: 18px;
-      max-width: 75%;
-    }
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-    .user {
-      align-self: flex-end;
-      background-color: #dcf8c6;
-    }
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    .bot {
-      align-self: flex-start;
-      background-color: #e5e5ea;
-    }
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="antialiased selection:bg-primary selection:text-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 glass-nav transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div
+            class="flex-shrink-0 cursor-pointer"
+            onclick="window.scrollTo(0, 0)"
+          >
+            <span class="font-mono text-2xl font-bold text-white"
+              >&lt;Ahmad<span class="text-primary">RajaFadhil</span>/&gt;</span
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#about"
+                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#education"
+                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Education</a
+              >
+              <a
+                href="#skills"
+                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#contact"
+                class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-blue-500/30"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              onclick="toggleMobileMenu()"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden hidden bg-card border-b border-gray-700"
+        id="mobile-menu"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            >Projects</a
+          >
+          <a
+            href="#education"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
+            >Education</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium text-primary"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
 
-    #input-area {
-      display: flex;
-      padding: 15px;
-      border-top: 1px solid #eee;
-    }
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div
+          class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"
+        ></div>
+        <div
+          class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px]"
+        ></div>
+      </div>
 
-    #user-input {
-      flex-grow: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 18px;
-    }
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center"
+      >
+        <div
+          class="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0"
+          data-aos="fade-right"
+        >
+          <div
+            class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-blue-500/10 rounded-full border border-blue-500/20"
+          >
+            Available for Hire
+          </div>
+          <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            Turning Data into <br />
+            <span class="gradient-text">Intelligence</span>
+          </h1>
+          <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
+            Hi, I'm <strong class="text-white">Ahmad Raja Fadhil</strong>. A
+            Data Scientist and AI Engineer specializing in Deep Learning, NLP,
+            and scalable ML infrastructure.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          >
+            <a
+              href="#projects"
+              class="px-8 py-4 bg-primary hover:bg-blue-600 text-white rounded-lg font-semibold transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2"
+            >
+              View Projects <i class="fas fa-arrow-right"></i>
+            </a>
+            <a
+              href="https://github.com/rajafadhil"
+              target="_blank"
+              class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-semibold transition-all border border-gray-700 flex items-center justify-center gap-2"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
 
-    #send-btn {
-      margin-left: 10px;
-      padding: 10px 20px;
-      background-color: #0084ff;
-      color: white;
-      border: none;
-      border-radius: 18px;
-      cursor: pointer;
-    }
+          <div
+            class="mt-12 flex items-center justify-center lg:justify-start gap-6 text-gray-400"
+          >
+            <a
+              href="https://www.linkedin.com/in/ahmadrajaf/"
+              target="_blank"
+              class="hover:text-white transition-colors"
+              ><i class="fab fa-linkedin text-2xl"></i
+            ></a>
+            <a
+              href="https://www.kaggle.com/ahmadrajafadhil"
+              target="_blank"
+              class="hover:text-white transition-colors"
+              ><i class="fab fa-kaggle text-2xl"></i
+            ></a>
+          </div>
+        </div>
 
-    #api-key-input {
-      padding: 10px;
-      margin-bottom: 10px;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <div id="chat-container">
-    <div id="api-key-container">
-      <input type="password" id="api-key-input" placeholder="Masukkan DashScope API Key kamu di sini" />
-    </div>
-    <div id="chat-log">
-      <div class="message bot">Halo! Saya adalah Qwen. Silakan masukkan API Key kamu di atas dan mulai chatting!</div>
-    </div>
-    <div id="input-area">
-      <input type="text" id="user-input" placeholder="Ketik pesan..." />
-      <button id="send-btn">Kirim</button>
-    </div>
-  </div>
+        <div
+          class="w-full lg:w-1/2 flex justify-center relative"
+          data-aos="fade-left"
+        >
+          <div class="relative w-80 h-80 lg:w-[500px] lg:h-[500px]">
+            <!-- Decorative rings -->
+            <div
+              class="absolute inset-0 border-2 border-dashed border-gray-700 rounded-full animate-[spin_10s_linear_infinite]"
+            ></div>
+            <div
+              class="absolute inset-4 border border-gray-600 rounded-full animate-[spin_15s_linear_infinite_reverse]"
+            ></div>
 
-  <script>
-    const chatLog = document.getElementById('chat-log');
-    const userInput = document.getElementById('user-input');
-    const sendBtn = document.getElementById('send-btn');
-    const apiKeyInput = document.getElementById('api-key-input');
+            <!-- Profile Image Container -->
+            <div
+              class="absolute inset-0 m-auto w-64 h-64 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl z-10 bg-gray-800"
+            >
+              <img
+                src="https://ik.imagekit.io/ahmadrajaf/profil-1.jpg"
+                alt="Ahmad Raja Fadhil"
+                id="profile-img"
+                class="w-full h-full object-cover"
+              />
+            </div>
 
-    function addMessage(sender, text) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message', sender);
-      messageDiv.textContent = text;
-      chatLog.appendChild(messageDiv);
-      chatLog.scrollTop = chatLog.scrollHeight;
-    }
+            <!-- Floating Tech Icons -->
+            <div
+              class="absolute top-0 right-10 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
+              style="animation-duration: 3s"
+            >
+              <i class="fab fa-python text-3xl text-yellow-400"></i>
+            </div>
+            <div
+              class="absolute bottom-10 left-0 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
+              style="animation-duration: 4s"
+            >
+              <i class="fas fa-brain text-3xl text-pink-500"></i>
+            </div>
+            <div
+              class="absolute top-1/2 -right-4 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
+              style="animation-duration: 5s"
+            >
+              <i class="fas fa-database text-3xl text-blue-400"></i>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    async function sendMessage() {
-      const message = userInput.value.trim();
-      const apiKey = apiKeyInput.value.trim();
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="text-gray-500 hover:text-white transition-colors"
+        >
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
 
-      if (!message || !apiKey) return;
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
 
-      addMessage('user', message);
-      userInput.value = '';
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Sixth-semester IT student at Telkom University | Microsoft
+              Certified AI (AI-900 & AI-102) | Alibaba Cloud Gen AI Engineer. I
+              transform data into actionable insights using Python, SQL, and BI
+              tools (Tableau, Power BI, Looker Studio), currently applying these
+              skills as a Center of Excellence Intern at PT Pegadaian while
+              delivering real-world data solutions.
+            </p>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              With 3x Best Participant awards in Cloud Computing, Data Science,
+              and Excel for BI, plus end-to-end project experience at Ministry
+              of Transportation and Tape Koe, I bridge academic theory with
+              industry practice. Open to opportunities in Data Analytics,
+              Business Intelligence, and Machine Learning.
+            </p>
 
-      const response = await fetch('https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          "model": "qwen-flash",
-          "input": {
-            "prompt": message
-          },
-          "parameters": {
-            "result_format": "text"
-          }
-        })
-      });
+            <!-- <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="p-4 bg-card rounded-lg border border-gray-700">
+                <h3 class="text-3xl font-bold text-primary mb-1">5+</h3>
+                <p class="text-sm text-gray-400">Years Experience</p>
+              </div>
+              <div class="p-4 bg-card rounded-lg border border-gray-700">
+                <h3 class="text-3xl font-bold text-secondary mb-1">20+</h3>
+                <p class="text-sm text-gray-400">Projects Completed</p>
+              </div>
+              <div class="p-4 bg-card rounded-lg border border-gray-700">
+                <h3 class="text-3xl font-bold text-pink-500 mb-1">10+</h3>
+                <p class="text-sm text-gray-400">Research Papers</p>
+              </div>
+              <div class="p-4 bg-card rounded-lg border border-gray-700">
+                <h3 class="text-3xl font-bold text-green-500 mb-1">100%</h3>
+                <p class="text-sm text-gray-400">Client Satisfaction</p>
+              </div>
+            </div> -->
+          </div>
 
-      const data = await response.json();
-      const reply = data.output.text;
-      addMessage('bot', reply);
-    }
+          <div class="relative" data-aos="fade-left">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary opacity-30 blur-lg rounded-xl"
+            ></div>
+            <div
+              class="relative bg-card p-8 rounded-xl border border-gray-700 shadow-2xl"
+            >
+              <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-code text-primary"></i> Current Focus
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <span class="text-gray-300"
+                    >Developing Large Language Model (LLM) agents for enterprise
+                    automation.</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <span class="text-gray-300"
+                    >Optimizing inference latency for real-time computer vision
+                    systems.</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <span class="text-gray-300"
+                    >Exploring MLOps best practices for model monitoring and
+                    drift detection.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    sendBtn.onclick = sendMessage;
-    userInput.onkeypress = (e) => {
-      if (e.key === 'Enter') sendMessage();
-    };
-  </script>
-</body>
+    <!-- Education & Experience Timeline -->
+    <section id="education" class="py-20 bg-[#0b1120]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Education & Experience
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Education Column -->
+          <div data-aos="fade-right">
+            <h3
+              class="text-2xl font-bold mb-8 text-white flex items-center gap-3"
+            >
+              <i class="fas fa-graduation-cap text-pink-500"></i> Education
+            </h3>
+            <div class="relative border-l-2 border-gray-700 ml-3 space-y-10">
+              <!-- Education Item 1 -->
+              <div class="relative pl-8 group">
+                <div
+                  class="absolute left-[-9px] w-4 h-4 bg-pink-500 rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
+                ></div>
+                <span
+                  class="inline-block px-3 py-1 bg-gray-800 text-pink-500 text-sm font-mono rounded mb-2"
+                  >2023 - 2027</span
+                >
+                <h3
+                  class="text-xl font-bold text-white group-hover:text-pink-500 transition-colors"
+                >
+                  Bachelor of Computer Science
+                </h3>
+                <p class="text-gray-400 mb-3">Telkom University</p>
+                <p class="text-gray-400 text-sm">
+                  Major in Information Technology. GPA: 3.9/4.0
+                </p>
+              </div>
+
+              <!-- Education Item 2 -->
+              <div class="relative pl-8 group">
+                <div
+                  class="absolute left-[-9px] w-4 h-4 bg-green-500 rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
+                ></div>
+                <span
+                  class="inline-block px-3 py-1 bg-gray-800 text-green-500 text-sm font-mono rounded mb-2"
+                  >2020 - 2023</span
+                >
+                <h3
+                  class="text-xl font-bold text-white group-hover:text-green-500 transition-colors"
+                >
+                  Vocational High School Graduate
+                </h3>
+                <p class="text-gray-400 mb-3">SMKN 1 Cibinong</p>
+                <p class="text-gray-400 text-sm">
+                  Major in Multimedia. Score: 90/100
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Column -->
+          <div data-aos="fade-left">
+            <h3
+              class="text-2xl font-bold mb-8 text-white flex items-center gap-3"
+            >
+              <i class="fas fa-briefcase text-primary"></i> Experience
+            </h3>
+            <div class="relative border-l-2 border-gray-700 ml-3 space-y-10">
+              <!-- Experience Item 1 -->
+              <div class="relative pl-8 group">
+                <div
+                  class="absolute left-[-9px] w-4 h-4 bg-primary rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
+                ></div>
+                <span
+                  class="inline-block px-3 py-1 bg-gray-800 text-primary text-sm font-mono rounded mb-2"
+                  >Jan 2026 - Present</span
+                >
+                <h3
+                  class="text-xl font-bold text-white group-hover:text-primary transition-colors"
+                >
+                  Digital Center of Excellence Intern
+                </h3>
+                <p class="text-gray-400 mb-3">PT Pegadaian</p>
+                <p class="text-gray-400 text-sm">
+                  As a Digital Center of Excellence Intern, I contribute to
+                  cutting-edge data analytics projects, assisting in the
+                  development of machine learning models and data visualization
+                  tools to support strategic business decisions.
+                </p>
+              </div>
+
+              <!-- Experience Item 2 -->
+              <div class="relative pl-8 group">
+                <div
+                  class="absolute left-[-9px] w-4 h-4 bg-secondary rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
+                ></div>
+                <span
+                  class="inline-block px-3 py-1 bg-gray-800 text-secondary text-sm font-mono rounded mb-2"
+                  >Jul 2025 - Sep 2025</span
+                >
+                <h3
+                  class="text-xl font-bold text-white group-hover:text-secondary transition-colors"
+                >
+                  Data Management Support
+                </h3>
+                <p class="text-gray-400 mb-3">
+                  Ministry of Transportation Republic Indonesia
+                </p>
+                <p class="text-gray-400 text-sm">
+                  Responsible for managing and maintaining data accuracy,
+                  ensuring data integrity, and providing technical support to
+                  users. Assisting in data migration processes and conducting
+                  data quality checks to support efficient data management
+                  operations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#0b1120]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Arsenal</h2>
+          <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Programming & Tools -->
+          <div
+            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-primary/50 transition-all group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors"
+            >
+              <i class="fas fa-laptop-code text-2xl text-blue-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Languages & Core</h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Python</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >SQL</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >C++</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Bash</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Git</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Docker</span
+              >
+            </div>
+          </div>
+
+          <!-- ML Frameworks -->
+          <div
+            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-purple-500/50 transition-all group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors"
+            >
+              <i class="fas fa-brain text-2xl text-purple-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">ML & Deep Learning</h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >TensorFlow</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >PyTorch</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Scikit-Learn</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Keras</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Hugging Face</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >OpenCV</span
+              >
+            </div>
+          </div>
+
+          <!-- Data & Cloud -->
+          <div
+            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-green-500/50 transition-all group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors"
+            >
+              <i class="fas fa-cloud text-2xl text-green-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Data Engineering & Cloud</h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >AWS SageMaker</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Apache Spark</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Kafka</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >PostgreSQL</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >MongoDB</span
+              >
+              <span
+                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >Airflow</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <p class="mt-4 text-gray-400">
+            A selection of my recent work in AI and Data Science.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
+              >
+                <!-- Placeholder for generated image -->
+                <img
+                  src="https://ik.imagekit.io/ahmadrajaf/project/disney-analysis.png?updatedAt=1751796572693"
+                  class="project-img-1 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
+                  alt="AI-Powered Insights from Disneyland Reviews"
+                />
+              </div>
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
+              >
+                <a
+                  href="https://drive.google.com/file/d/1B78jcVlyd7JiQ_0frlPNoGOLLpvsrITK/view"
+                  target="_blank"
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-colors"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+              >
+                AI-Powered Insights from Disneyland Reviews
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Analyzed over 42,000 Disneyland reviews using IBM Granite LLM to
+                extract sentiment, summarize feedback, and identify key factors
+                influencing visitor satisfaction across three global branches.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span
+                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
+                  >Pandas & NLTK</span
+                >
+                <span
+                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
+                  >IBM Granite LLM</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
+              >
+                <img
+                  src="https://ik.imagekit.io/ahmadrajaf/project/rice%20production.png?updatedAt=1751373899258"
+                  class="project-img-2 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
+                  alt="Predict Rice Production"
+                />
+              </div>
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
+              >
+                <a
+                  href="https://drive.google.com/file/d/1s633ZKx2oSzKptqEIDsVREk5VWf2y_8J/view"
+                  target="_blank"
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-secondary hover:text-white transition-colors"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors"
+              >
+                Predict Rice Production
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Developed a multiple linear regression model to predict rice
+                production in Sumatra based on agricultural and climate-related
+                variables such as harvested area, rainfall, temperature, and
+                humidity.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span
+                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
+                  >Scikit-Learn</span
+                >
+                <span
+                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
+                  >Matplotlib</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
+              >
+                <img
+                  src="https://ik.imagekit.io/ahmadrajaf/project/student_scores.png?updatedAt=1751373895651"
+                  class="project-img-3 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
+                  alt="Student Score Prediction"
+                />
+              </div>
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
+              >
+                <a
+                  href="https://drive.google.com/file/d/1TFh_uQYhcEMxtDV3MuwXdX5-QnouAyZM/view"
+                  target="_blank"
+                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-pink-500 hover:text-white transition-colors"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 group-hover:text-pink-500 transition-colors"
+              >
+                Predicting Student Scores
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Built and compared machine learning models to predict student
+                scores based on study hours using regression techniques.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
+                  >Python</span
+                >
+                <span
+                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
+                  >Scikit-Learn</span
+                >
+                <span
+                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
+                  >Matplotlib</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="https://github.com/rajafadhil"
+            class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold"
+          >
+            View All Projects on GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-20"
+      >
+        <div
+          class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/30 rounded-full blur-[100px]"
+        ></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="zoom-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Let's Work Together
+          </h2>
+          <p class="text-gray-400 mb-8">
+            Have a project in mind or want to discuss the latest in AI? Feel
+            free to reach out.
+          </p>
+
+          <a
+            href="mailto:fadhilahmadraja@gmail.com"
+            class="inline-block bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 mb-12"
+          >
+            Say Hello <i class="fas fa-paper-plane ml-2"></i>
+          </a>
+
+          <div class="flex flex-wrap justify-center gap-6 text-left">
+            <div
+              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
+            >
+              <div
+                class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 shrink-0"
+              >
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase">Email</p>
+                <p class="text-sm font-medium break-all sm:break-normal">fadhilahmadraja@gmail.com</p>
+              </div>
+            </div>
+            <div
+              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
+            >
+              <div
+                class="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 shrink-0"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase">LinkedIn</p>
+                <p class="text-sm font-medium break-all sm:break-normal">
+                  linkedin.com/in/ahmadrajafadhil
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
+            >
+              <div
+                class="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400 shrink-0"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 uppercase">Location</p>
+                <p class="text-sm font-medium">Jakarta, Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050914] py-8 border-t border-gray-800">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="mb-4 md:mb-0">
+          <span class="font-mono text-lg font-bold text-white"
+            >&lt;Ahmad<span class="text-primary">RajaFadhil</span>/&gt;</span
+          >
+          <p class="text-gray-500 text-sm mt-1">
+            © 2026 Ahmad Raja Fadhil. All rights reserved.
+          </p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://github.com/rajafadhil" class="text-gray-400 hover:text-white transition-colors"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/ahmadrajafadhil/"
+            class="text-gray-400 hover:text-white transition-colors"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://medium.com/@rajafadhil" class="text-gray-400 hover:text-white transition-colors"
+            ><i class="fab fa-medium"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <!-- 
+      NOTE: Since I must output ONLY code and cannot wait for asynchronous tool returns to inject into the code block in a single pass,
+      I will use the `image_gen` tool NOW to get the URLs, then update the HTML below with the actual URLs.
+    -->
+  </body>
 </html>
