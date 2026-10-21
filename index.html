@@ -1,894 +1,1085 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmad Raja Fadhil | Data Scientist & AI Engineer</title>
+<!--
+  ============================================================
+  index.html — Ahmad Raja Fadhil | Portfolio Website
+  Theme: Clean & Bright • Monochrome
+  ============================================================
+  FILE STRUCTURE (push ALL of these to your repo "rajafadhil.github.io"):
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  ├── index.html                      ← this file
+  ├── style.css
+  ├── script.js
+  ├── assets/
+  │   └── Ahmad-Raja-Fadhil-CV.pdf    ← put your real CV file here
+  └── images/
+      ├── ph-profile.svg              ← replace with your real photo
+      ├── ph-dashboard.svg            ← replace with project screenshots
+      ├── ph-ai.svg
+      ├── ph-code.svg
+      ├── ph-team.svg
+      └── ph-cert.svg                 ← replace with real certificate scans
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+  NOTE:
+  - All links using "https://example.com" are DUMMY links.
+    Replace them with your real GitHub / Drive / Certificate URLs.
+  - All external links already use target="_blank" (open in new tab).
+-->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmad Raja Fadhil — Data &amp; AI Engineer</title>
+  <meta name="description" content="Portfolio of Ahmad Raja Fadhil — Data & AI Engineer, Center of Excellence Intern at Pegadaian, Microsoft Certified AI & Data, Alibaba Cloud Gen AI Engineer." />
 
-    <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <!-- Fonts (Fontsource CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/latin-400-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/latin-500-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/latin-600-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/latin-700-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/latin-800-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/latin-400-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/latin-500-normal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/latin-700-normal.css" />
 
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 
-    <script src="tailwind.config.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="antialiased selection:bg-primary selection:text-white">
-    <!-- Navigation -->
-    <nav
-      class="fixed w-full z-50 glass-nav transition-all duration-300"
-      id="navbar"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <div
-            class="flex-shrink-0 cursor-pointer"
-            onclick="window.scrollTo(0, 0)"
-          >
-            <span class="font-mono text-2xl font-bold text-white"
-              >&lt;Ahmad<span class="text-primary">RajaFadhil</span>/&gt;</span
-            >
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a
-                href="#about"
-                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
-                >About</a
-              >
-              <a
-                href="#education"
-                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
-                >Education</a
-              >
-              <a
-                href="#skills"
-                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
-                >Skills</a
-              >
-              <a
-                href="#projects"
-                class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium"
-                >Projects</a
-              >
-              <a
-                href="#contact"
-                class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-blue-500/30"
-                >Contact Me</a
-              >
-            </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <button
-              type="button"
-              onclick="toggleMobileMenu()"
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
-            >
-              <i class="fas fa-bars text-xl"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div
-        class="md:hidden hidden bg-card border-b border-gray-700"
-        id="mobile-menu"
-      >
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="#about"
-            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            >Projects</a
-          >
-          <a
-            href="#education"
-            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700"
-            >Education</a
-          >
-          <a
-            href="#contact"
-            class="block px-3 py-2 rounded-md text-base font-medium text-primary"
-            >Contact</a
-          >
-        </div>
-      </div>
-    </nav>
+  <!-- Swiper.js (for Journey image sliders) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Hero Section -->
-    <section
-      class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
-    >
-      <!-- Background Elements -->
-      <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div
-          class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"
-        ></div>
-        <div
-          class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px]"
-        ></div>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-zinc-900 font-sans antialiased">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-transparent">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="text-lg font-bold tracking-tight text-zinc-900">Ahmad Raja<span class="text-zinc-400">.</span></a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-500">
+        <a href="#about" class="nav-link hover:text-zinc-900">About</a>
+        <a href="#skills" class="nav-link hover:text-zinc-900">Skills</a>
+        <a href="#projects" class="nav-link hover:text-zinc-900">Projects</a>
+        <a href="#journey" class="nav-link hover:text-zinc-900">Journey</a>
+        <a href="#awards" class="nav-link hover:text-zinc-900">Credentials</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a href="#contact" class="btn-dark btn-sm">Let's Talk</a>
       </div>
 
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center"
-      >
-        <div
-          class="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0"
-          data-aos="fade-right"
-        >
-          <div
-            class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-blue-500/10 rounded-full border border-blue-500/20"
-          >
-            Available for Hire
-          </div>
-          <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-            Turning Data into <br />
-            <span class="gradient-text">Intelligence</span>
-          </h1>
-          <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-            Hi, I'm <strong class="text-white">Ahmad Raja Fadhil</strong>. A
-            Data Scientist and AI Engineer specializing in Deep Learning, NLP,
-            and scalable ML infrastructure.
-          </p>
-          <div
-            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-          >
-            <a
-              href="#projects"
-              class="px-8 py-4 bg-primary hover:bg-blue-600 text-white rounded-lg font-semibold transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2"
-            >
-              View Projects <i class="fas fa-arrow-right"></i>
-            </a>
-            <a
-              href="https://github.com/rajafadhil"
-              target="_blank"
-              class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-semibold transition-all border border-gray-700 flex items-center justify-center gap-2"
-            >
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </div>
+      <!-- Mobile hamburger -->
+      <button id="menuToggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-zinc-200 text-zinc-700 hover:bg-zinc-50 transition" aria-label="Toggle menu">
+        <svg id="iconMenuOpen" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="iconMenuClose" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
 
-          <div
-            class="mt-12 flex items-center justify-center lg:justify-start gap-6 text-gray-400"
-          >
-            <a
-              href="https://www.linkedin.com/in/ahmadrajaf/"
-              target="_blank"
-              class="hover:text-white transition-colors"
-              ><i class="fab fa-linkedin text-2xl"></i
-            ></a>
-            <a
-              href="https://www.kaggle.com/ahmadrajafadhil"
-              target="_blank"
-              class="hover:text-white transition-colors"
-              ><i class="fab fa-kaggle text-2xl"></i
-            ></a>
-          </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-zinc-100 px-5 py-5 space-y-1">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#journey" class="mobile-link">Journey</a>
+      <a href="#awards" class="mobile-link">Credentials</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="assets/Ahmad-Raja-Fadhil-CV.pdf" target="_blank" rel="noopener noreferrer" class="mobile-link">Download CV ↗</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home" class="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <span class="chip-dark">
+          <span class="w-2 h-2 rounded-full bg-zinc-900 animate-pulse"></span>
+          Open to Data &amp; AI Opportunities
+        </span>
+
+        <h1 class="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.05]">
+          Ahmad Raja<br />Fadhil
+        </h1>
+
+        <p class="mt-4 font-mono text-lg md:text-xl text-zinc-500">&gt; Data &amp; AI Engineer_<span class="animate-pulse">|</span></p>
+
+        <p class="mt-6 text-zinc-600 leading-relaxed max-w-xl">
+          Final-year IT student at Telkom University turning raw data into real business impact —
+          from 1M+ row pipelines and BI dashboards to production-grade AI, Cloud, and full-stack solutions.
+          Currently a Digital Center of Excellence Intern at <strong class="text-zinc-900 font-semibold">PT Pegadaian</strong>.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#projects" class="btn-dark">View My Work</a>
+          <!-- Replace the href below with your real CV file inside /assets -->
+          <a href="assets/Ahmad-Raja-Fadhil-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">Download CV ↗</a>
         </div>
 
-        <div
-          class="w-full lg:w-1/2 flex justify-center relative"
-          data-aos="fade-left"
-        >
-          <div class="relative w-80 h-80 lg:w-[500px] lg:h-[500px]">
-            <!-- Decorative rings -->
-            <div
-              class="absolute inset-0 border-2 border-dashed border-gray-700 rounded-full animate-[spin_10s_linear_infinite]"
-            ></div>
-            <div
-              class="absolute inset-4 border border-gray-600 rounded-full animate-[spin_15s_linear_infinite_reverse]"
-            ></div>
-
-            <!-- Profile Image Container -->
-            <div
-              class="absolute inset-0 m-auto w-64 h-64 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl z-10 bg-gray-800"
-            >
-              <img
-                src="img/profile.jpg"
-                alt="Ahmad Raja Fadhil"
-                id="profile-img"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Floating Tech Icons -->
-            <div
-              class="absolute top-0 right-10 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
-              style="animation-duration: 3s"
-            >
-              <i class="fab fa-python text-3xl text-yellow-400"></i>
-            </div>
-            <div
-              class="absolute bottom-10 left-0 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
-              style="animation-duration: 4s"
-            >
-              <i class="fas fa-brain text-3xl text-pink-500"></i>
-            </div>
-            <div
-              class="absolute top-1/2 -right-4 bg-card p-3 rounded-xl shadow-lg border border-gray-700 animate-bounce"
-              style="animation-duration: 5s"
-            >
-              <i class="fas fa-database text-3xl text-blue-400"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <a
-          href="#about"
-          class="text-gray-500 hover:text-white transition-colors"
-        >
-          <i class="fas fa-chevron-down text-2xl"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-dark relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right">
-            <p class="text-gray-300 text-lg leading-relaxed mb-6">
-              Final Year IT student at Telkom University | Microsoft
-              Certified AI (AI-900 & AI-102) | Alibaba Cloud Gen AI Engineer. I
-              transform data into actionable insights using Python, SQL, and BI
-              tools (Tableau, Power BI, Looker Studio), currently applying these
-              skills as a Center of Excellence Intern at PT Pegadaian while
-              delivering real-world data solutions.
-            </p>
-            <p class="text-gray-300 text-lg leading-relaxed mb-6">
-              With 3x Best Participant awards in Cloud Computing, Data Science,
-              and Excel for BI, plus end-to-end project experience at Ministry
-              of Transportation and Tape Koe, I bridge academic theory with
-              industry practice. Open to opportunities in Data Analytics,
-              Business Intelligence, and Machine Learning.
-            </p>
-
-            <!-- <div class="grid grid-cols-2 gap-4 mt-8">
-              <div class="p-4 bg-card rounded-lg border border-gray-700">
-                <h3 class="text-3xl font-bold text-primary mb-1">5+</h3>
-                <p class="text-sm text-gray-400">Years Experience</p>
-              </div>
-              <div class="p-4 bg-card rounded-lg border border-gray-700">
-                <h3 class="text-3xl font-bold text-secondary mb-1">20+</h3>
-                <p class="text-sm text-gray-400">Projects Completed</p>
-              </div>
-              <div class="p-4 bg-card rounded-lg border border-gray-700">
-                <h3 class="text-3xl font-bold text-pink-500 mb-1">10+</h3>
-                <p class="text-sm text-gray-400">Research Papers</p>
-              </div>
-              <div class="p-4 bg-card rounded-lg border border-gray-700">
-                <h3 class="text-3xl font-bold text-green-500 mb-1">100%</h3>
-                <p class="text-sm text-gray-400">Client Satisfaction</p>
-              </div>
-            </div> -->
-          </div>
-
-          <div class="relative" data-aos="fade-left">
-            <div
-              class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary opacity-30 blur-lg rounded-xl"
-            ></div>
-            <div
-              class="relative bg-card p-8 rounded-xl border border-gray-700 shadow-2xl"
-            >
-              <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                <i class="fas fa-code text-primary"></i> Current Focus
-              </h3>
-              <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                  <span class="text-gray-300"
-                    >Developing Large Language Model (LLM) agents for enterprise
-                    automation.</span
-                  >
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                  <span class="text-gray-300"
-                    >Optimizing inference latency for real-time computer vision
-                    systems.</span
-                  >
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
-                  <span class="text-gray-300"
-                    >Exploring MLOps best practices for model monitoring and
-                    drift detection.</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Experience Timeline -->
-    <section id="education" class="py-20 bg-[#0b1120]">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Education & Experience
-          </h2>
-          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Education Column -->
-          <div data-aos="fade-right">
-            <h3
-              class="text-2xl font-bold mb-8 text-white flex items-center gap-3"
-            >
-              <i class="fas fa-graduation-cap text-pink-500"></i> Education
-            </h3>
-            <div class="relative border-l-2 border-gray-700 ml-3 space-y-10">
-              <!-- Education Item 1 -->
-              <div class="relative pl-8 group">
-                <div
-                  class="absolute left-[-9px] w-4 h-4 bg-pink-500 rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
-                ></div>
-                <span
-                  class="inline-block px-3 py-1 bg-gray-800 text-pink-500 text-sm font-mono rounded mb-2"
-                  >2023 - 2027</span
-                >
-                <h3
-                  class="text-xl font-bold text-white group-hover:text-pink-500 transition-colors"
-                >
-                  Bachelor of Computer Science
-                </h3>
-                <p class="text-gray-400 mb-3">Telkom University</p>
-                <p class="text-gray-400 text-sm">
-                  Major in Information Technology. GPA: 3.9/4.0
-                </p>
-              </div>
-
-              <!-- Education Item 2 -->
-              <div class="relative pl-8 group">
-                <div
-                  class="absolute left-[-9px] w-4 h-4 bg-green-500 rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
-                ></div>
-                <span
-                  class="inline-block px-3 py-1 bg-gray-800 text-green-500 text-sm font-mono rounded mb-2"
-                  >2020 - 2023</span
-                >
-                <h3
-                  class="text-xl font-bold text-white group-hover:text-green-500 transition-colors"
-                >
-                  Vocational High School Graduate
-                </h3>
-                <p class="text-gray-400 mb-3">SMKN 1 Cibinong</p>
-                <p class="text-gray-400 text-sm">
-                  Major in Multimedia. Score: 90/100
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Column -->
-          <div data-aos="fade-left">
-            <h3
-              class="text-2xl font-bold mb-8 text-white flex items-center gap-3"
-            >
-              <i class="fas fa-briefcase text-primary"></i> Experience
-            </h3>
-            <div class="relative border-l-2 border-gray-700 ml-3 space-y-10">
-              <!-- Experience Item 1 -->
-              <div class="relative pl-8 group">
-                <div
-                  class="absolute left-[-9px] w-4 h-4 bg-primary rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
-                ></div>
-                <span
-                  class="inline-block px-3 py-1 bg-gray-800 text-primary text-sm font-mono rounded mb-2"
-                  >Jan 2026 - Present</span
-                >
-                <h3
-                  class="text-xl font-bold text-white group-hover:text-primary transition-colors"
-                >
-                  Digital Center of Excellence Intern
-                </h3>
-                <p class="text-gray-400 mb-3">PT Pegadaian</p>
-                <p class="text-gray-400 text-sm">
-                  As a Digital Center of Excellence Intern, I contribute to
-                  cutting-edge data analytics projects, assisting in the
-                  development of machine learning models and data visualization
-                  tools to support strategic business decisions.
-                </p>
-              </div>
-
-              <!-- Experience Item 2 -->
-              <div class="relative pl-8 group">
-                <div
-                  class="absolute left-[-9px] w-4 h-4 bg-secondary rounded-full border-4 border-[#0b1120] group-hover:scale-125 transition-transform mt-1.5"
-                ></div>
-                <span
-                  class="inline-block px-3 py-1 bg-gray-800 text-secondary text-sm font-mono rounded mb-2"
-                  >Jul 2025 - Sep 2025</span
-                >
-                <h3
-                  class="text-xl font-bold text-white group-hover:text-secondary transition-colors"
-                >
-                  Data Management Support
-                </h3>
-                <p class="text-gray-400 mb-3">
-                  Ministry of Transportation Republic Indonesia
-                </p>
-                <p class="text-gray-400 text-sm">
-                  Responsible for managing and maintaining data accuracy,
-                  ensuring data integrity, and providing technical support to
-                  users. Assisting in data migration processes and conducting
-                  data quality checks to support efficient data management
-                  operations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-[#0b1120]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Arsenal</h2>
-          <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Programming & Tools -->
-          <div
-            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-primary/50 transition-all group"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div
-              class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors"
-            >
-              <i class="fas fa-laptop-code text-2xl text-blue-400"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">Languages & Core</h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Python</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >SQL</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >C++</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Bash</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Git</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Docker</span
-              >
-            </div>
-          </div>
-
-          <!-- ML Frameworks -->
-          <div
-            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-purple-500/50 transition-all group"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div
-              class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors"
-            >
-              <i class="fas fa-brain text-2xl text-purple-400"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">ML & Deep Learning</h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >TensorFlow</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >PyTorch</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Scikit-Learn</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Keras</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Hugging Face</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >OpenCV</span
-              >
-            </div>
-          </div>
-
-          <!-- Data & Cloud -->
-          <div
-            class="bg-card p-6 rounded-xl border border-gray-700 hover:border-green-500/50 transition-all group"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div
-              class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors"
-            >
-              <i class="fas fa-cloud text-2xl text-green-400"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">Data Engineering & Cloud</h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >AWS SageMaker</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Apache Spark</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Kafka</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >PostgreSQL</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >MongoDB</span
-              >
-              <span
-                class="tech-badge px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
-                >Airflow</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-          <p class="mt-4 text-gray-400">
-            A selection of my recent work in AI and Data Science.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="relative h-48 overflow-hidden">
-              <div
-                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
-              >
-                <!-- Placeholder for generated image -->
-                <img
-                  src="porto1-cover.png"
-                  class="project-img-1 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
-                  alt="AI-Powered Insights from Disneyland Reviews"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
-              >
-                <a
-                  href="https://drive.google.com/file/d/1B78jcVlyd7JiQ_0frlPNoGOLLpvsrITK/view"
-                  target="_blank"
-                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-colors"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3
-                class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
-              >
-                AI-Powered Insights from Disneyland Reviews
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                Analyzed over 42,000 Disneyland reviews using IBM Granite LLM to
-                extract sentiment, summarize feedback, and identify key factors
-                influencing visitor satisfaction across three global branches.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
-                  >Python</span
-                >
-                <span
-                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
-                  >Pandas & NLTK</span
-                >
-                <span
-                  class="text-xs font-mono text-primary bg-blue-500/10 px-2 py-1 rounded"
-                  >IBM Granite LLM</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="relative h-48 overflow-hidden">
-              <div
-                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
-              >
-                <img
-                  src="https://ik.imagekit.io/ahmadrajaf/project/rice%20production.png?updatedAt=1751373899258"
-                  class="project-img-2 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
-                  alt="Predict Rice Production"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
-              >
-                <a
-                  href="https://drive.google.com/file/d/1s633ZKx2oSzKptqEIDsVREk5VWf2y_8J/view"
-                  target="_blank"
-                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-secondary hover:text-white transition-colors"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3
-                class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors"
-              >
-                Predict Rice Production
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                Developed a multiple linear regression model to predict rice
-                production in Sumatra based on agricultural and climate-related
-                variables such as harvested area, rainfall, temperature, and
-                humidity.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
-                  >Python</span
-                >
-                <span
-                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
-                  >Scikit-Learn</span
-                >
-                <span
-                  class="text-xs font-mono text-secondary bg-violet-500/10 px-2 py-1 rounded"
-                  >Matplotlib</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="group bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="relative h-48 overflow-hidden">
-              <div
-                class="absolute inset-0 bg-gray-800 flex items-center justify-center"
-              >
-                <img
-                  src="https://ik.imagekit.io/ahmadrajaf/project/student_scores.png?updatedAt=1751373895651"
-                  class="project-img-3 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500"
-                  alt="Student Score Prediction"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 overlay"
-              >
-                <a
-                  href="https://drive.google.com/file/d/1TFh_uQYhcEMxtDV3MuwXdX5-QnouAyZM/view"
-                  target="_blank"
-                  class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:bg-pink-500 hover:text-white transition-colors"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3
-                class="text-xl font-bold mb-2 group-hover:text-pink-500 transition-colors"
-              >
-                Predicting Student Scores
-              </h3>
-              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                Built and compared machine learning models to predict student
-                scores based on study hours using regression techniques.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
-                  >Python</span
-                >
-                <span
-                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
-                  >Scikit-Learn</span
-                >
-                <span
-                  class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded"
-                  >Matplotlib</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a
-            href="https://github.com/rajafadhil"
-            class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold"
-          >
-            View All Projects on GitHub <i class="fas fa-arrow-right"></i>
+        <div class="mt-8 flex items-center gap-3">
+          <a href="mailto:fadhilahmadraja@gmail.com" class="icon-btn" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmadrajaf" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/rajafadhil" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/raja.f_007/" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
+            </svg>
           </a>
         </div>
       </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
-      <div
-        class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-20"
-      >
-        <div
-          class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/30 rounded-full blur-[100px]"
-        ></div>
+      <!-- Hero image + floating cards -->
+      <div class="relative max-w-md mx-auto w-full">
+        <div class="relative rounded-3xl overflow-hidden border border-zinc-200 bg-zinc-100 aspect-[4/5]">
+          <!-- Replace src with your real photo, e.g. images/profile.jpg -->
+          <img src="images/ph-profile.svg" alt="Ahmad Raja Fadhil" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-white border border-zinc-200 rounded-2xl shadow-xl shadow-zinc-200/60 px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-zinc-900">3×</p>
+          <p class="text-xs text-zinc-500 mt-0.5">Best Participant Awards</p>
+        </div>
+        <div class="absolute -top-5 -right-3 sm:-right-5 bg-white border border-zinc-200 rounded-2xl shadow-xl shadow-zinc-200/60 px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-zinc-900">Top 10%</p>
+          <p class="text-xs text-zinc-500 mt-0.5">AI Engineer Cohort</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS STRIP ==================== -->
+  <section class="border-y border-zinc-200 bg-zinc-50">
+    <div class="max-w-6xl mx-auto px-5 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <p class="font-mono text-3xl font-bold text-zinc-900">10+</p>
+        <p class="text-sm text-zinc-500 mt-1">Strategic POCs Evaluated</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-3xl font-bold text-zinc-900">2,800+</p>
+        <p class="text-sm text-zinc-500 mt-1">Cohort Peers — Top 10% Graduate</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-3xl font-bold text-zinc-900">1M+</p>
+        <p class="text-sm text-zinc-500 mt-1">Rows of Data Processed</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-3xl font-bold text-zinc-900">40%</p>
+        <p class="text-sm text-zinc-500 mt-1">Reporting Time Reduced</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 01 · ABOUT ==================== -->
+  <section id="about" class="py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl reveal">
+        <p class="font-mono text-sm text-zinc-400 mb-3">01 — ABOUT</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">Bridging data, AI &amp; business impact.</h2>
       </div>
 
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div data-aos="zoom-in">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Let's Work Together
-          </h2>
-          <p class="text-gray-400 mb-8">
-            Have a project in mind or want to discuss the latest in AI? Feel
-            free to reach out.
+      <div class="mt-12 grid lg:grid-cols-5 gap-10">
+        <div class="lg:col-span-3 space-y-5 text-zinc-600 leading-relaxed reveal">
+          <p>
+            I'm a final-year Information Technology student at <strong class="text-zinc-900 font-semibold">Telkom University</strong>,
+            certified by <strong class="text-zinc-900 font-semibold">Microsoft in AI &amp; Data (AI-900, AI-102, DP-600)</strong> and as an
+            <strong class="text-zinc-900 font-semibold">Alibaba Cloud Generative AI Engineer</strong>.
+            I transform data into actionable insights using Python, SQL, and BI tools — Tableau, Power BI, and Looker Studio.
           </p>
+          <p>
+            Currently, I apply these skills as a <strong class="text-zinc-900 font-semibold">Digital Center of Excellence Intern at PT Pegadaian</strong>,
+            evaluating strategic Proofs of Concept with global vendors and delivering real-world data solutions.
+          </p>
+          <p>
+            With <strong class="text-zinc-900 font-semibold">3× Best Participant awards</strong> in Cloud Computing, Data Science, and Excel for BI,
+            plus end-to-end project experience at the Ministry of Transportation and Tape Koe, I bridge academic theory with industry practice —
+            and I'm open to opportunities in Data Analytics, Business Intelligence, and Machine Learning.
+          </p>
+        </div>
 
-          <a
-            href="mailto:fadhilahmadraja@gmail.com"
-            class="inline-block bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 mb-12"
-          >
-            Say Hello <i class="fas fa-paper-plane ml-2"></i>
-          </a>
-
-          <div class="flex flex-wrap justify-center gap-6 text-left">
-            <div
-              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
-            >
-              <div
-                class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 shrink-0"
-              >
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <p class="text-xs text-gray-500 uppercase">Email</p>
-                <p class="text-sm font-medium break-all sm:break-normal">fadhilahmadraja@gmail.com</p>
-              </div>
+        <div class="lg:col-span-2 reveal">
+          <div class="bg-white border border-zinc-200 rounded-2xl p-7 space-y-6">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Education</p>
+              <p class="font-semibold text-zinc-900 text-sm">B.Eng Information Technology</p>
+              <p class="text-sm text-zinc-500">Telkom University · 2023 – 2027</p>
+              <p class="text-xs text-zinc-400 mt-2">Public Speaking — PR Institute (2024) · Digital Multimedia — SMKN 1 Cibinong (2020 – 2023)</p>
             </div>
-            <div
-              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
-            >
-              <div
-                class="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 shrink-0"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </div>
-              <div>
-                <p class="text-xs text-gray-500 uppercase">LinkedIn</p>
-                <p class="text-sm font-medium break-all sm:break-normal">
-                  linkedin.com/in/ahmadrajafadhil
-                </p>
-              </div>
+            <div class="border-t border-zinc-100 pt-5">
+              <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Location</p>
+              <p class="text-sm text-zinc-600">Jakarta Metropolitan Area, Indonesia</p>
             </div>
-            <div
-              class="bg-card p-6 rounded-xl border border-gray-700 flex items-center gap-4 w-fit"
-            >
-              <div
-                class="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400 shrink-0"
-              >
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <p class="text-xs text-gray-500 uppercase">Location</p>
-                <p class="text-sm font-medium">Jakarta, Indonesia</p>
+            <div class="border-t border-zinc-100 pt-5">
+              <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Languages</p>
+              <p class="text-sm text-zinc-600">Indonesian (Native) · English (Limited Working) · Japanese (Elementary)</p>
+            </div>
+            <div class="border-t border-zinc-100 pt-5">
+              <p class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-3">Focus</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="chip">Data Analytics</span>
+                <span class="chip">Business Intelligence</span>
+                <span class="chip">Machine Learning</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#050914] py-8 border-t border-gray-800">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center"
-      >
-        <div class="mb-4 md:mb-0">
-          <span class="font-mono text-lg font-bold text-white"
-            >&lt;Ahmad<span class="text-primary">RajaFadhil</span>/&gt;</span
-          >
-          <p class="text-gray-500 text-sm mt-1">
-            © 2026 Ahmad Raja Fadhil. All rights reserved.
-          </p>
+  <!-- ==================== 02 · SKILLS ==================== -->
+  <section id="skills" class="py-24 bg-zinc-50 border-y border-zinc-100">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl reveal">
+        <p class="font-mono text-sm text-zinc-400 mb-3">02 — SKILLS</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">The tech arsenal.</h2>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <div class="skill-card reveal">
+          <p class="font-mono text-xs text-zinc-400 mb-3">A/</p>
+          <h3 class="text-lg font-bold text-zinc-900 mb-4">AI &amp; Machine Learning</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">TensorFlow</span><span class="chip">CNN</span><span class="chip">Generative AI</span>
+            <span class="chip">Custom Training Loops</span><span class="chip">Scikit-learn</span><span class="chip">XGBoost</span>
+            <span class="chip">Random Forest</span><span class="chip">k-Means</span><span class="chip">k-NN</span><span class="chip">Regression</span>
+          </div>
         </div>
-        <div class="flex space-x-6">
-          <a href="https://github.com/rajafadhil" class="text-gray-400 hover:text-white transition-colors"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/ahmadrajafadhil/"
-            class="text-gray-400 hover:text-white transition-colors"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://medium.com/@rajafadhil" class="text-gray-400 hover:text-white transition-colors"
-            ><i class="fab fa-medium"></i
-          ></a>
+
+        <div class="skill-card reveal">
+          <p class="font-mono text-xs text-zinc-400 mb-3">B/</p>
+          <h3 class="text-lg font-bold text-zinc-900 mb-4">Data &amp; Business Intelligence</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Tableau</span>
+            <span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">Google BigQuery</span>
+            <span class="chip">Excel · Pivot Tables</span><span class="chip">Data Cleaning</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <p class="font-mono text-xs text-zinc-400 mb-3">C/</p>
+          <h3 class="text-lg font-bold text-zinc-900 mb-4">Cloud &amp; Automation</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Alibaba Cloud</span><span class="chip">Google Cloud (GCP)</span><span class="chip">Microsoft Azure</span>
+            <span class="chip">Google Apps Script</span><span class="chip">Git &amp; GitHub</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <p class="font-mono text-xs text-zinc-400 mb-3">D/</p>
+          <h3 class="text-lg font-bold text-zinc-900 mb-4">Web &amp; Backend Development</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">React · Hooks</span><span class="chip">Context &amp; Routing</span><span class="chip">Node.js</span>
+            <span class="chip">RESTful API</span><span class="chip">JWT Auth</span><span class="chip">Redis</span><span class="chip">RabbitMQ</span>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+  <!-- ==================== 03 · PROJECTS ==================== -->
+  <section id="projects" class="py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl reveal">
+        <p class="font-mono text-sm text-zinc-400 mb-3">03 — PROJECTS</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">Featured work.</h2>
+        <p class="mt-4 text-zinc-500">Selected projects across computer vision, full-stack engineering, and business intelligence.</p>
+      </div>
 
-    <!-- 
-      NOTE: Since I must output ONLY code and cannot wait for asynchronous tool returns to inject into the code block in a single pass,
-      I will use the `image_gen` tool NOW to get the URLs, then update the HTML below with the actual URLs.
-    -->
-  </body>
-</html>
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+        <!-- Project 1 : FAST -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-ai.svg" alt="FAST Fintech OCR project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">FAST — Fintech OCR</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              End-to-end computer vision pipeline that digitizes financial documents. Built as Model Builder
+              for the Coding Camp DBS capstone — fully integrated with the team's backend &amp; frontend systems.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">TensorFlow</span><span class="chip">CNN</span><span class="chip">Python</span><span class="chip">Computer Vision</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real GitHub URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">GitHub ↗</a>
+              <!-- DUMMY LINK — replace with real Drive URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm">Drive ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 : Maintify -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-dashboard.svg" alt="Maintify predictive maintenance project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">Maintify — Predictive Maintenance</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              Full-stack, AI-powered predictive maintenance platform for industrial assets. Capstone of
+              Asah by Dicoding (250 hours, score 94/100) integrating React, backend, and machine learning.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">AI</span><span class="chip">Full-Stack</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real GitHub URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">GitHub ↗</a>
+              <a href="https://bit.ly/FINPRO-ASAH25" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm">Final Project ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 : OpenMusic API -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-code.svg" alt="OpenMusic API project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">OpenMusic API</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              Production-ready RESTful API for a music platform featuring JWT authentication, Redis caching,
+              RabbitMQ message queues, and file storage — enterprise-scale backend architecture.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">Node.js</span><span class="chip">JWT</span><span class="chip">Redis</span><span class="chip">RabbitMQ</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real GitHub URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 : Loan Simulator -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-ai.svg" alt="AI Loan Approval Simulator project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">AI Loan Approval Simulator</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              Interactive web application predicting loan eligibility for MSMEs with clear, risk-based
+              explanations. XGBoost selected as best model via F1-score on the minority class.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">XGBoost</span><span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">Web App</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real GitHub URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">GitHub ↗</a>
+              <!-- DUMMY LINK — replace with real demo/drive URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm">Demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 : Port Dashboard -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-dashboard.svg" alt="Port Data Dashboard project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">Port Data Dashboard</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              Interactive Tableau dashboards visualizing Indonesia's national port distribution data,
+              supporting data-driven decision-making at the Ministry of Transportation directorate level.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">Data Viz</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real dashboard URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">View Dashboard ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 : Muamalat Dashboard -->
+        <article class="project-card reveal h-full">
+          <div class="overflow-hidden">
+            <img src="images/ph-dashboard.svg" alt="Muamalat Sales Analytics project preview" class="project-img" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-zinc-900">Muamalat Sales Analytics</h3>
+            <p class="text-sm text-zinc-500 mt-2 leading-relaxed flex-1">
+              Looker Studio dashboard visualizing 11,000+ sales transactions across 4 integrated datasets —
+              surfacing product performance, sales trends, and regional analysis insights.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="chip">Looker Studio</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">BI</span>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <!-- DUMMY LINK — replace with real dashboard URL -->
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-dark btn-sm">View Dashboard ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 04 · JOURNEY ==================== -->
+  <section id="journey" class="py-24 bg-zinc-50 border-y border-zinc-100">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl reveal">
+        <p class="font-mono text-sm text-zinc-400 mb-3">04 — JOURNEY</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">The journey so far.</h2>
+      </div>
+
+      <!-- Journey Tabs -->
+      <div class="mt-10 flex flex-wrap gap-3 reveal" role="tablist" aria-label="Journey categories">
+        <button class="tab-btn active" data-group="journey" data-tab="work">Work Experience</button>
+        <button class="tab-btn" data-group="journey" data-tab="bootcamp">Projects &amp; Bootcamps</button>
+        <button class="tab-btn" data-group="journey" data-tab="org">Organizations</button>
+      </div>
+
+      <div class="mt-12">
+
+        <!-- ======= TAB: WORK EXPERIENCE ======= -->
+        <div class="tab-panel active" data-group="journey" data-panel="work">
+          <div class="timeline">
+
+            <!-- Pegadaian -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Jan 2026 — Present</span>
+                      <span class="loc-chip">Jakarta Metropolitan Area</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Digital Center of Excellence Intern</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">PT Pegadaian</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Evaluated 10+ strategic Proofs of Concept with 10+ global vendors, potentially reducing IT budget inefficiencies by up to 25%.</li>
+                      <li class="bullet">Built real-time dashboards &amp; workflow automation using Looker Studio and Apps Script, cutting manual reporting time by 40%.</li>
+                      <li class="bullet">Managed IT infrastructure tickets with a 100% resolution rate; coordinated division events for 70+ employees with 95% satisfaction.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Pegadaian activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Pegadaian activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Pegadaian activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ministry of Transportation -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Jul 2025 — Sep 2025</span>
+                      <span class="loc-chip">Central Jakarta</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Data Management Support</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Ministry of Transportation, Republic of Indonesia</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Managed &amp; validated 800+ rows of national port data, improving raw data processing efficiency by 20%.</li>
+                      <li class="bullet">Developed interactive Tableau dashboards visualizing Indonesia's port distribution for directorate-level decision-making.</li>
+                      <li class="bullet">Designed business process flows integrating SIMPEL, SIPANDU &amp; SIFASPEL systems, accelerating cross-unit data integration by 30%.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Kemenhub activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Kemenhub activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Kemenhub activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- VINIX7 -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Feb 2025 — May 2025</span>
+                      <span class="loc-chip">Jakarta Metropolitan Area</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Junior Data Scientist</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">VINIX7</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Analyzed 9 data project modules using Excel, Python &amp; Tableau to generate insights from 100+ user responses.</li>
+                      <li class="bullet">Built predictive models (regression, k-NN, k-Means) reaching 84% accuracy and generating 3+ user segments.</li>
+                      <li class="bullet">Developed interactive Tableau dashboards, accelerating data interpretation by up to 50%.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-ai.svg" alt="VINIX7 activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="VINIX7 activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="VINIX7 activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tape Koe -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Jun 2024 — Jun 2025</span>
+                      <span class="loc-chip">Bekasi Regency, West Java</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Business Analyst</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Tape Koe</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Evaluated business performance using financial &amp; sales data analysis, delivering a 25% profitability increase in the first month.</li>
+                      <li class="bullet">Improved operational efficiency by 30% and reduced costs by 15% while supporting 40% annual growth targets.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Tape Koe activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Tape Koe activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Tape Koe activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Bank Muamalat -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Feb 2025 — Mar 2025</span>
+                      <span class="loc-chip">Project-Based Internship</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Business Intelligence Analyst</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">PT Bank Muamalat Indonesia Tbk × Rakamin</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Managed 4 datasets (3,300+ rows) with Python &amp; Google Colab, ensuring 100% data accuracy.</li>
+                      <li class="bullet">Built a Looker Studio dashboard visualizing 11,000+ sales transactions for product &amp; regional analysis.</li>
+                      <li class="bullet">Delivered 3+ strategic recommendations for revenue growth and product bundling strategies.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Muamalat activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Muamalat activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Muamalat activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Kimia Farma -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Jan 2025 — Feb 2025</span>
+                      <span class="loc-chip">Project-Based Internship</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Big Data Analytics</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">PT Kimia Farma Tbk × Rakamin</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Managed 1M+ rows of sales &amp; inventory data in Google BigQuery, improving analysis efficiency by 30% via SQL optimization.</li>
+                      <li class="bullet">Built a Looker Studio dashboard for 600K+ transactions, accelerating business decision-making by 35%.</li>
+                      <li class="bullet">Contributed 4+ data-driven recommendations on revenue, product strategy, and branch performance.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Kimia Farma activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Kimia Farma activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Kimia Farma activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Indocement -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Jul 2022 — Oct 2022</span>
+                      <span class="loc-chip">Bogor, West Java</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Video Editor &amp; Data Entry Assistant</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">PT Indocement Tunggal Prakarsa Tbk</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Produced corporate training videos for employees using Adobe After Effects.</li>
+                      <li class="bullet">Entered 100+ employee records with 99.8% accuracy and reduced data discrepancies by 30% through cross-validation.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Indocement activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Indocement activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Indocement activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ======= TAB: PROJECTS & BOOTCAMPS ======= -->
+        <div class="tab-panel" data-group="journey" data-panel="bootcamp">
+          <div class="timeline">
+
+            <!-- Coding Camp DBS -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Feb 2026 — Jul 2026</span>
+                      <span class="loc-chip">Graduated with Distinction · Top 10%</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">AI Engineer Cohort</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Coding Camp powered by DBS Foundation</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Graduated with Distinction — top 10% among 2,800 selected participants, completing the full curriculum &amp; capstone on time.</li>
+                      <li class="bullet">Advanced Deep Learning mastery (96/100): custom CNN architectures, custom training loops, and custom layers/loss functions with TensorFlow.</li>
+                      <li class="bullet">Capstone — Model Builder of FAST (Fintech OCR): end-to-end computer vision pipeline integrated with backend &amp; frontend systems.</li>
+                      <li class="bullet">Achieved CEFR B2 (82%) and completed 7 soft-skills &amp; career development modules (90/100).</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-ai.svg" alt="Coding Camp DBS activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Coding Camp DBS activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Coding Camp DBS activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Asah Dicoding -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Aug 2025 — Jan 2026</span>
+                      <span class="loc-chip">React · Backend · AI</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">React &amp; Back End with AI Cohort</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Asah led by Dicoding</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Capstone: Maintify — full-stack AI-powered predictive maintenance platform (250 hours, score 94/100).</li>
+                      <li class="bullet">Built OpenMusic API — production-ready RESTful API with JWT, Redis, RabbitMQ &amp; file storage (90 hours, 86/100).</li>
+                      <li class="bullet">Designed interactive React applications leveraging hooks, context, routing &amp; state management (91/100 &amp; 94/100).</li>
+                    </ul>
+                    <!-- Real link from CV -->
+                    <a href="https://bit.ly/FINPRO-ASAH25" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5">Final Project ↗</a>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Asah Dicoding activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Asah Dicoding activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-ai.svg" alt="Asah Dicoding activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Celerates -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Sep 2025 — Dec 2025</span>
+                      <span class="loc-chip">Final Grade: 94.70 (A)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Data Science &amp; Generative AI Cohort</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Celerates</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Completed a 4-month intensive program covering 7 core modules — from data science foundations to advanced Generative AI.</li>
+                      <li class="bullet">Evaluated Logistic Regression, Random Forest &amp; XGBoost models; selected XGBoost via F1-score for the minority class (rejected loans).</li>
+                      <li class="bullet">Final Project: "AI-Powered Loan Approval Simulator for MSMEs" — interactive web app with risk-based explanations.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-ai.svg" alt="Celerates activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Celerates activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Celerates activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ======= TAB: ORGANIZATIONS ======= -->
+        <div class="tab-panel" data-group="journey" data-panel="org">
+          <div class="timeline">
+
+            <!-- Google Student Ambassador -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Oct 2026 — Present</span>
+                      <span class="loc-chip">Campus Ambassador</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Google Student Ambassador</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Google</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Represent Google's developer ecosystem and promote Google technologies within the student community.</li>
+                      <li class="bullet">Drive tech community engagement, events, and peer learning on campus.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="Google Student Ambassador activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="Google Student Ambassador activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="Google Student Ambassador activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- GDSC -->
+            <article class="timeline-item reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-card">
+                <div class="grid lg:grid-cols-5 gap-7">
+                  <div class="lg:col-span-3">
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <span class="period-chip">Dec 2023 — Dec 2024</span>
+                      <span class="loc-chip">South Jakarta</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-900">Core Team — Creative Division</h3>
+                    <p class="font-mono text-sm text-zinc-500 mt-1">Google Developer Student Clubs · Telkom University Jakarta</p>
+                    <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 leading-relaxed">
+                      <li class="bullet">Served on the core team of the creative division, contributing to content, design, and event operations.</li>
+                      <li class="bullet">Helped grow the campus tech community through workshops and developer events.</li>
+                    </ul>
+                  </div>
+                  <div class="lg:col-span-2">
+                    <div class="swiper journey-swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/ph-team.svg" alt="GDSC activity 1" /></div>
+                        <div class="swiper-slide"><img src="images/ph-dashboard.svg" alt="GDSC activity 2" /></div>
+                        <div class="swiper-slide"><img src="images/ph-code.svg" alt="GDSC activity 3" /></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 05 · TROPHY ROOM ==================== -->
+  <section id="awards" class="py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl reveal">
+        <p class="font-mono text-sm text-zinc-400 mb-3">05 — TROPHY ROOM</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">Credentials &amp; recognition.</h2>
+      </div>
+
+      <!-- Trophy Tabs -->
+      <div class="mt-10 flex flex-wrap gap-3 reveal" role="tablist" aria-label="Credentials categories">
+        <button class="tab-btn active" data-group="trophy" data-tab="certs">Certifications</button>
+        <button class="tab-btn" data-group="trophy" data-tab="awards">Awards</button>
+      </div>
+
+      <div class="mt-12">
+
+        <!-- ======= TAB: CERTIFICATIONS ======= -->
+        <div class="tab-panel active" data-group="trophy" data-panel="certs">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Microsoft SQL AI Developer certificate" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">MICROSOFT</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">Microsoft Certified: SQL AI Developer Associate</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Database development &amp; AI-powered data solutions with Microsoft SQL services.</p>
+                <!-- DUMMY LINK — replace with your credential URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Alibaba Cloud Gen AI Engineer certificate" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">ALIBABA CLOUD</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">Certified Associate: Generative AI Engineer</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Generative AI engineering on Alibaba Cloud infrastructure (ACA-level certification).</p>
+                <!-- DUMMY LINK — replace with your credential URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Google Cloud Data Analytics certificate" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">GOOGLE CLOUD</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">Google Cloud Data Analytics Certificate</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">End-to-end data analytics workflows on Google Cloud ecosystem.</p>
+                <!-- DUMMY LINK — replace with your credential URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Cloud Computing Talent Class certificate" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">TALENT CLASS · BATCH 15</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">Introduction to Cloud Computing</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Cloud computing fundamentals — completed as Best Participant of the batch.</p>
+                <!-- DUMMY LINK — replace with your credential URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Microsoft Excel certificate" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">MICROSOFT EXCEL</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">Microsoft Excel Proficiency</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Advanced spreadsheet usage, pivot tables &amp; business data analysis.</p>
+                <!-- DUMMY LINK — replace with your credential URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ======= TAB: AWARDS ======= -->
+        <div class="tab-panel" data-group="trophy" data-panel="awards">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Best Participant Cloud Computing award" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">TALENT CLASS · BATCH 15</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">🏆 Best Participant</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Introduction to Cloud Computing — recognized as the top participant of the batch.</p>
+                <!-- DUMMY LINK — replace with your proof URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Best Participant Data Science award" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">TALENT CLASS · BATCH 16</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">🏆 Best Participant</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Data Science Fundamentals — recognized as the top participant of the batch.</p>
+                <!-- DUMMY LINK — replace with your proof URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+            <article class="trophy-card reveal h-full">
+              <div class="overflow-hidden border-b border-zinc-100">
+                <img src="images/ph-cert.svg" alt="Best Student Excel for BI award" class="trophy-img" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="font-mono text-xs text-zinc-400 mb-2">TALENT CLASS · BATCH 19</p>
+                <h3 class="font-bold text-zinc-900 leading-snug">🏆 Best Student</h3>
+                <p class="text-sm text-zinc-500 mt-2 flex-1">Excel for Business Intelligence — recognized as the best student of the batch.</p>
+                <!-- DUMMY LINK — replace with your proof URL -->
+                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-outline btn-sm mt-5 self-start">View More ↗</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 06 · CONTACT ==================== -->
+  <section id="contact" class="py-28 bg-zinc-950">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <p class="font-mono text-sm text-zinc-500 mb-4 reveal">06 — CONTACT</p>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white reveal">Let's build something with data.</h2>
+      <p class="mt-5 text-zinc-400 max-w-xl mx-auto leading-relaxed reveal">
+        Open to opportunities in Data Analytics, Business Intelligence, and Machine Learning.
+        My inbox is always open — let's connect!
+      </p>
+
+      <a href="mailto:fadhilahmadraja@gmail.com" class="inline-block mt-8 font-mono text-lg md:text-xl text-white border-b border-zinc-600 hover:border-white pb-1 transition-colors reveal">
+        fadhilahmadraja@gmail.com
+      </a>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4 reveal">
+        <a href="https://www.linkedin.com/in/ahmadrajaf" target="_blank" rel="noopener noreferrer" class="btn-light">LinkedIn ↗</a>
+        <a href="https://github.com/rajafadhil" target="_blank" rel="noopener noreferrer" class="btn-ghost">GitHub ↗</a>
+        <a href="https://www.instagram.com/raja.f_007/" target="_blank" rel="noopener noreferrer" class="btn-ghost">Instagram ↗</a>
+        <a href="tel:+6282213286381" class="btn-ghost">+62 822-1328-6381</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-zinc-950 border-t border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+      <p>© <span id="year">2026</span> Ahmad Raja Fadhil. All rights reserved.</p>
+      <p class="font-mono text-xs">clean &amp; bright · monochrome · deployed on GitHub Pages</p>
+      <a href="#home" class="hover:text-white transition-colors">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Back to top floating button -->
+  <button id="backToTop" aria-label="Back to top"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-zinc-900 text-white shadow-lg shadow-zinc-900/25 opacity-0 pointer-events-none translate-y-3 transition-all duration-300 hover:bg-zinc-700 flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>  
