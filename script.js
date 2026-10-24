@@ -1,4 +1,26 @@
+/* ============================================================
+   FILE 3 dari 3 : script.js
+   ============================================================
+   PENTING — cara membuat file:
+   1. Buat file baru bernama : script.js
+   2. Copy SEMUA isi di bawah ini ke dalam file tersebut.
+   3. JANGAN mencampur HTML (index.html) atau CSS (style.css)
+      ke dalam file ini.
+
+   Fitur:
+   - Placeholder gambar otomatis (img dengan atribut data-ph)
+   - Menu mobile (hamburger)
+   - Navbar sticky + efek scroll
+   - Sistem tab (Journey & Trophy Room)
+   - Slider gambar Swiper di setiap item Journey
+   - Animasi reveal saat scroll
+   - Highlight menu aktif
+   - Tombol back-to-top
+   - Tahun otomatis di footer
+   ============================================================ */
+
 document.addEventListener("DOMContentLoaded", function () {
+  setupPlaceholderImages();
   setupMobileMenu();
   setupNavbarOnScroll();
   setupTabSystem();
@@ -9,7 +31,61 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFooterYear();
 });
 
-/* ---------- Mobile hamburger menu ---------- */
+/* ---------- Placeholder gambar otomatis ----------
+   Semua <img data-ph="..."> akan diisi gambar placeholder SVG.
+   Cara ganti ke gambar asli nanti:
+   ubah  <img data-ph="team" src="about:blank" alt="..." />
+   jadi  <img src="images/foto-kamu.jpg" alt="..." />
+--------------------------------------------------- */
+function setupPlaceholderImages() {
+  const placeholderImageElements = document.querySelectorAll("img[data-ph]");
+
+  const placeholderLabelMap = {
+    profile: "PROFILE PHOTO",
+    dashboard: "DASHBOARD PREVIEW",
+    ai: "AI / COMPUTER VISION",
+    code: "CODE / API",
+    team: "ACTIVITY PHOTO",
+    cert: "CERTIFICATE"
+  };
+
+  placeholderImageElements.forEach(function (placeholderImageItem) {
+    const placeholderType = placeholderImageItem.getAttribute("data-ph") || "image";
+    const placeholderLabel = placeholderLabelMap[placeholderType] || "IMAGE PREVIEW";
+    placeholderImageItem.src = buildPlaceholderDataUri(placeholderLabel);
+  });
+}
+
+function buildPlaceholderDataUri(labelText) {
+  const svgMarkup =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">' +
+    '<defs>' +
+    '  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
+    '    <stop offset="0%" stop-color="#f0f7fb"/>' +
+    '    <stop offset="100%" stop-color="#e0f0f8"/>' +
+    '  </linearGradient>' +
+    '  <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
+    '    <stop offset="0%" stop-color="#086288"/>' +
+    '    <stop offset="100%" stop-color="#4D8DBA"/>' +
+    '  </linearGradient>' +
+    '</defs>' +
+    '<rect width="1200" height="750" fill="url(#bgGrad)"/>' +
+    '<rect x="30" y="30" width="1140" height="690" rx="20" fill="none" stroke="#97D7FF" stroke-width="2.5" stroke-dasharray="14 10" opacity="0.8"/>' +
+    '<!-- Subtle Tech Mesh -->' +
+    '<circle cx="600" cy="300" r="140" fill="none" stroke="#97D7FF" stroke-width="1.5" opacity="0.4"/>' +
+    '<circle cx="600" cy="300" r="100" fill="none" stroke="#4D8DBA" stroke-width="1.5" opacity="0.3"/>' +
+    '<circle cx="600" cy="275" r="48" fill="#FFEFC4" stroke="#086288" stroke-width="2.5"/>' +
+    '<path d="M500 430 L575 350 L620 395 L670 340 L700 430 Z" fill="url(#primaryGrad)" opacity="0.85"/>' +
+    '<rect x="420" y="490" width="360" height="52" rx="26" fill="#FFEFC4" stroke="#086288" stroke-width="2"/>' +
+    '<text x="600" y="525" font-family="monospace" font-size="18" font-weight="700" fill="#086288" text-anchor="middle" letter-spacing="3">' +
+    labelText +
+    '</text>' +
+    '</svg>';
+
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgMarkup);
+}
+
+/* ---------- Menu hamburger mobile ---------- */
 function setupMobileMenu() {
   const menuToggleButton = document.getElementById("menuToggle");
   const mobileMenuPanel = document.getElementById("mobileMenu");
@@ -24,10 +100,9 @@ function setupMobileMenu() {
     closeIconElement.classList.toggle("hidden", isNowHidden);
   });
 
-  // Close the menu whenever a link is tapped
-  const mobileMenuLinks = mobileMenuPanel.querySelectorAll("a");
-  mobileMenuLinks.forEach(function (menuLinkItem) {
-    menuLinkItem.addEventListener("click", function () {
+  const mobileMenuLinkElements = mobileMenuPanel.querySelectorAll("a");
+  mobileMenuLinkElements.forEach(function (mobileMenuLinkItem) {
+    mobileMenuLinkItem.addEventListener("click", function () {
       mobileMenuPanel.classList.add("hidden");
       openIconElement.classList.remove("hidden");
       closeIconElement.classList.add("hidden");
@@ -35,67 +110,65 @@ function setupMobileMenu() {
   });
 }
 
-/* ---------- Sticky navbar shadow on scroll ---------- */
+/* ---------- Efek bayangan navbar saat scroll ---------- */
 function setupNavbarOnScroll() {
-  const navbarHeader = document.getElementById("navbar");
-  if (!navbarHeader) return;
+  const navbarHeaderElement = document.getElementById("navbar");
+  if (!navbarHeaderElement) return;
 
   window.addEventListener(
     "scroll",
     function () {
       if (window.scrollY > 8) {
-        navbarHeader.classList.add("scrolled");
+        navbarHeaderElement.classList.add("scrolled");
       } else {
-        navbarHeader.classList.remove("scrolled");
+        navbarHeaderElement.classList.remove("scrolled");
       }
     },
     { passive: true }
   );
 }
 
-/* ---------- Generic tab system (Journey + Trophy Room) ----------
-   Buttons : <button class="tab-btn" data-group="X" data-tab="Y">
-   Panels  : <div class="tab-panel" data-group="X" data-panel="Y">
+/* ---------- Sistem tab umum (Journey + Trophy Room) ----------
+   Tombol : <button class="tab-btn" data-group="X" data-tab="Y">
+   Panel  : <div class="tab-panel" data-group="X" data-panel="Y">
 ----------------------------------------------------------------- */
 function setupTabSystem() {
-  const allTabButtons = document.querySelectorAll(".tab-btn");
+  const allTabButtonElements = document.querySelectorAll(".tab-btn");
 
-  allTabButtons.forEach(function (tabButtonItem) {
+  allTabButtonElements.forEach(function (tabButtonItem) {
     tabButtonItem.addEventListener("click", function () {
-      const groupName = tabButtonItem.dataset.group;
+      const groupNameValue = tabButtonItem.dataset.group;
       const targetPanelName = tabButtonItem.dataset.tab;
 
-      // Deactivate all buttons in this group, activate clicked one
-      const siblingButtons = document.querySelectorAll(
-        '.tab-btn[data-group="' + groupName + '"]'
+      const siblingButtonElements = document.querySelectorAll(
+        '.tab-btn[data-group="' + groupNameValue + '"]'
       );
-      siblingButtons.forEach(function (siblingButtonItem) {
+      siblingButtonElements.forEach(function (siblingButtonItem) {
         siblingButtonItem.classList.remove("active");
       });
       tabButtonItem.classList.add("active");
 
-      // Hide all panels in this group, show the matching one
-      const siblingPanels = document.querySelectorAll(
-        '.tab-panel[data-group="' + groupName + '"]'
+      const siblingPanelElements = document.querySelectorAll(
+        '.tab-panel[data-group="' + groupNameValue + '"]'
       );
-      siblingPanels.forEach(function (siblingPanelItem) {
+      siblingPanelElements.forEach(function (siblingPanelItem) {
         siblingPanelItem.classList.remove("active");
       });
 
-      const matchingPanel = document.querySelector(
-        '.tab-panel[data-group="' + groupName + '"][data-panel="' + targetPanelName + '"]'
+      const matchingPanelElement = document.querySelector(
+        '.tab-panel[data-group="' + groupNameValue + '"][data-panel="' + targetPanelName + '"]'
       );
-      if (matchingPanel) {
-        matchingPanel.classList.add("active");
+      if (matchingPanelElement) {
+        matchingPanelElement.classList.add("active");
       }
     });
   });
 }
 
-/* ---------- Swiper sliders inside Journey timeline ----------
-   observer + observeParents make sliders render correctly even
-   when they live inside initially hidden tab panels.
----------------------------------------------------------------- */
+/* ---------- Slider Swiper di timeline Journey ----------
+   observer + observeParents membuat slider tetap benar
+   meskipun berada di dalam tab yang awalnya tersembunyi.
+---------------------------------------------------------- */
 function setupJourneySwipers() {
   const journeySwiperElements = document.querySelectorAll(".journey-swiper");
 
@@ -110,34 +183,34 @@ function setupJourneySwipers() {
       observeParents: true,
       pagination: {
         el: swiperContainerElement.querySelector(".swiper-pagination"),
-        clickable: true,
+        clickable: true
       },
       navigation: {
         nextEl: swiperContainerElement.querySelector(".swiper-button-next"),
-        prevEl: swiperContainerElement.querySelector(".swiper-button-prev"),
+        prevEl: swiperContainerElement.querySelector(".swiper-button-prev")
       },
       a11y: {
         prevSlideMessage: "Previous image",
-        nextSlideMessage: "Next image",
-      },
+        nextSlideMessage: "Next image"
+      }
     });
   });
 }
 
-/* ---------- Scroll reveal (IntersectionObserver) ---------- */
+/* ---------- Animasi reveal saat scroll ---------- */
 function setupScrollReveal() {
-  const revealElements = document.querySelectorAll(".reveal");
+  const revealElementList = document.querySelectorAll(".reveal");
+
   if (!("IntersectionObserver" in window)) {
-    // Fallback: just show everything
-    revealElements.forEach(function (revealElementItem) {
-      revealElementItem.classList.add("visible");
+    revealElementList.forEach(function (revealFallbackItem) {
+      revealFallbackItem.classList.add("visible");
     });
     return;
   }
 
   const revealObserverInstance = new IntersectionObserver(
-    function (observerEntries) {
-      observerEntries.forEach(function (observerEntryItem) {
+    function (observerEntryList) {
+      observerEntryList.forEach(function (observerEntryItem) {
         if (observerEntryItem.isIntersecting) {
           observerEntryItem.target.classList.add("visible");
           revealObserverInstance.unobserve(observerEntryItem.target);
@@ -147,20 +220,20 @@ function setupScrollReveal() {
     { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
   );
 
-  revealElements.forEach(function (revealElementItem) {
+  revealElementList.forEach(function (revealElementItem) {
     revealObserverInstance.observe(revealElementItem);
   });
 }
 
-/* ---------- Highlight the nav link of the current section ---------- */
+/* ---------- Highlight menu navbar sesuai section aktif ---------- */
 function setupActiveNavHighlight() {
-  const pageSections = document.querySelectorAll("section[id]");
-  const navLinkElements = document.querySelectorAll(".nav-link");
+  const pageSectionElements = document.querySelectorAll("section[id]");
+  const navLinkElementList = document.querySelectorAll(".nav-link");
 
   function updateActiveNavLink() {
     const currentScrollPosition = window.scrollY + 140;
 
-    pageSections.forEach(function (sectionElementItem) {
+    pageSectionElements.forEach(function (sectionElementItem) {
       const sectionTopOffset = sectionElementItem.offsetTop;
       const sectionTotalHeight = sectionElementItem.offsetHeight;
       const sectionIdValue = sectionElementItem.getAttribute("id");
@@ -169,7 +242,7 @@ function setupActiveNavHighlight() {
         currentScrollPosition >= sectionTopOffset &&
         currentScrollPosition < sectionTopOffset + sectionTotalHeight
       ) {
-        navLinkElements.forEach(function (navLinkItem) {
+        navLinkElementList.forEach(function (navLinkItem) {
           const isMatchingLink =
             navLinkItem.getAttribute("href") === "#" + sectionIdValue;
           navLinkItem.classList.toggle("active-link", isMatchingLink);
@@ -182,7 +255,7 @@ function setupActiveNavHighlight() {
   updateActiveNavLink();
 }
 
-/* ---------- Floating back-to-top button ---------- */
+/* ---------- Tombol back-to-top melayang ---------- */
 function setupBackToTopButton() {
   const backToTopButtonElement = document.getElementById("backToTop");
   if (!backToTopButtonElement) return;
@@ -204,7 +277,7 @@ function setupBackToTopButton() {
   });
 }
 
-/* ---------- Auto-update footer year ---------- */
+/* ---------- Tahun otomatis di footer ---------- */
 function setupFooterYear() {
   const footerYearElement = document.getElementById("year");
   if (footerYearElement) {
