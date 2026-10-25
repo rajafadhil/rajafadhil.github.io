@@ -10,7 +10,7 @@ const PORTFOLIO_DATA = {
   // Teks bergantian untuk efek mengetik (Typing Effect) di Hero Section
   typingRoles: [
     "Data & BI Enthusiast",
-    "Digital CoE Intern @ Pegadaian",
+    "Digital CoE Intern at Pegadaian",
     "Microsoft Certified AI & Data",
     "Alibaba Cloud Gen AI Engineer",
     "Full-Stack & AI Developer"
@@ -63,6 +63,18 @@ const PORTFOLIO_DATA = {
   // Daftar Proyek (Mendukung filter: 'data', 'ai', 'web')
   projects: [
     {
+      title: "FraudGuard - Fraud Detection Model and Dashboard",
+      organization: "Individual",
+      category: "web",
+      categoryLabel: "Web & AI",
+      description:
+        "FraudGuard is a comprehensive fraud detection and prevention system that combines a real-time fraud detection model with an interactive dashboard. The system is designed to identify and analyze fraudulent activities using advanced machine learning techniques, providing users with actionable insights to mitigate risks.",
+      tech: ["React.js", "Python", "Random Forest", "Fraud Detection Model"],
+      image: "./assets/img/project-placeholder.svg",
+      demoUrl: "https://drive.google.com/file/d/1hxMuwsLZJyV2lhSK-j2DZbY66V04jI48/view?usp=drive_link",
+      repoUrl: "https://github.com/rajafadhil/fraud-guard"
+    },
+    {
       title: "Maintify — AI Predictive Maintenance Platform",
       organization: "Asah led by Dicoding (Capstone Project)",
       category: "web",
@@ -70,9 +82,9 @@ const PORTFOLIO_DATA = {
       description:
         "Platform predictive maintenance full-stack berbasis AI untuk kebutuhan industri (250 jam pengembangan, nilai 94/100). Mengintegrasikan frontend React, backend RESTful API, dan model machine learning secara end-to-end.",
       tech: ["React.js", "Node.js", "REST API", "Predictive AI"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "https://bit.ly/FINPRO-ASAH25",
-      repoUrl: "https://github.com/rajafadhil"
+      image: "./assets/img/maintify.jpg",
+      demoUrl: "https://drive.google.com/file/d/1hxMuwsLZJyV2lhSK-j2DZbY66V04jI48/view?usp=drive_link",
+      repoUrl: "https://github.com/deaprima/predictive-maintenance-copilot"
     },
     {
       title: "FAST — Fintech OCR Computer Vision Pipeline",
@@ -82,9 +94,9 @@ const PORTFOLIO_DATA = {
       description:
         "Membangun pipeline Computer Vision end-to-end sebagai Model Builder menggunakan arsitektur Custom CNN dan TensorFlow (skor modul 96/100), terintegrasi penuh dengan sistem backend dan frontend tim.",
       tech: ["Python", "TensorFlow", "Custom CNN", "OCR"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
+      image: "./assets/img/fast.jpg",
+      demoUrl: "https://drive.google.com/file/d/1cX3s9lPkEDFGJdyDVnpbdvQYR7swC2qi/view?usp=drive_link",
+      repoUrl: "https://github.com/FASTWorks"
     },
     {
       title: "AI-Powered Loan Approval Simulator for MSMEs",
@@ -94,9 +106,9 @@ const PORTFOLIO_DATA = {
       description:
         "Aplikasi web interaktif untuk memprediksi kelayakan pinjaman UMKM beserta penjelasan berbasis risiko. Mengevaluasi Logistic Regression, Random Forest, dan memilih XGBoost sebagai model terbaik berdasarkan F1-score.",
       tech: ["XGBoost", "Scikit-Learn", "Python", "Gen AI"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
+      image: "./assets/img/loanapproval.jpg",
+      demoUrl: "https://drive.google.com/file/d/17WhWDURwhszDvcfnNruHOq_iRSxW9TYU/view?usp=drive_link",
+      repoUrl: "https://github.com/rajafadhil/loan-approval"
     },
     {
       title: "Big Data Analytics: 1M+ Rows & 600K+ Transactions",
@@ -106,9 +118,9 @@ const PORTFOLIO_DATA = {
       description:
         "Mengelola 1 juta+ baris data penjualan, performa cabang, dan inventaris di Google BigQuery (efisiensi naik 30%). Memvisualisasikan 600.000+ transaksi di Looker Studio yang mempercepat pengambilan keputusan bisnis hingga 35%.",
       tech: ["Google BigQuery", "SQL", "Looker Studio", "Data Cleaning"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
+      image: "./assets/img/kf-bigdata.jpg",
+      demoUrl: "https://drive.google.com/file/d/1Sf56a0CdFYfn1g1otqlCVpY3v3wJNVgp/view?usp=drive_link",
+      repoUrl: "https://github.com/rajafadhil/Big-Data-KF-Query"
     },
     {
       title: "BI Sales & Regional Performance Dashboard",
@@ -118,64 +130,20 @@ const PORTFOLIO_DATA = {
       description:
         "Mengintegrasikan 4 dataset (3.300+ baris) menjadi master table dengan akurasi 100% di Google Colab & Python, serta membangun dashboard interaktif Looker Studio untuk 11.000+ transaksi penjualan.",
       tech: ["Python", "Google Colab", "Looker Studio", "BI Strategy"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
-    },
-    {
-      title: "National Port Data Dashboard & System Integration",
-      organization: "Kementerian Perhubungan RI",
-      category: "data",
-      categoryLabel: "Data & BI",
-      description:
-        "Validasi 800+ data pelabuhan nasional (efisiensi naik 20%), merancang alur integrasi sistem SIMPEL, SIPANDU, dan SIFASPEL, serta membuat dashboard Tableau distribusi pelabuhan Indonesia tingkat direktorat.",
-      tech: ["Tableau", "Excel Pivot", "Google Sheets", "BPMN / SOP"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
-    },
-    {
-      title: "Real-Time CoE Dashboard & Workflow Automation",
-      organization: "PT Pegadaian (Digital Center of Excellence)",
-      category: "data",
-      categoryLabel: "Data & Automation",
-      description:
-        "Mengembangkan dashboard real-time dan otomatisasi alur kerja menggunakan Looker Studio dan Google Apps Script yang memangkas waktu kompilasi data manual dan pelaporan hingga 40%.",
-      tech: ["Looker Studio", "Apps Script", "PoC Evaluation", "IT CoE"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
-    },
-    {
-      title: "Open Music RESTful API (Enterprise Architecture)",
-      organization: "Asah led by Dicoding",
-      category: "web",
-      categoryLabel: "Web & Backend",
-      description:
-        "Membangun RESTful API siap produksi dengan fitur autentikasi JWT, caching menggunakan Redis, message broker RabbitMQ, serta manajemen penyimpanan file (90 jam, nilai 86/100).",
-      tech: ["Node.js", "JWT", "Redis", "RabbitMQ"],
-      image: "./assets/img/project-placeholder.svg",
-      demoUrl: "#proyek",
-      repoUrl: "https://github.com/rajafadhil"
+      image: "./assets/img/bm-sales.jpg",
+      demoUrl: "https://drive.google.com/file/d/1OcJAEChQblz5W9FOd4Hjcr2Ffu87pDJR/view?usp=drive_link",
+      repoUrl: "https://github.com/rajafadhil/BI-analyst-BM"
     }
   ],
 
-  // Timeline Pengalaman Kerja & Cohort
-  experiences: [
-    {
-      role: "Google Student Ambassador",
-      company: "Google",
-      period: "Okt 2026 – Sekarang",
-      location: "Indonesia",
-      points: [
-        "Terpilih sebagai Google Student Ambassador yang menjembatani ekosistem teknologi Google dengan komunitas mahasiswa di kampus."
-      ]
-    },
+  // 1. Pengalaman Kerja
+  workExperiences: [
     {
       role: "Digital Center of Excellence (CoE) Intern",
       company: "PT Pegadaian",
       period: "Jan 2026 – Sekarang",
       location: "Jakarta Metropolitan Area",
+      image: "./assets/img/experience-placeholder.svg",
       points: [
         "Mengevaluasi lebih dari 10 Proof of Concept (PoC) strategis bersama 10+ vendor global, mempercepat adopsi teknologi tepat guna dan berpotensi menekan inefisiensi anggaran IT hingga 25%.",
         "Mengembangkan dashboard real-time dan otomatisasi workflow dengan Looker Studio & Apps Script, memangkas waktu pelaporan manual hingga 40%.",
@@ -183,41 +151,11 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
-      role: "AI Engineer Cohort (Top 10% Distinction Graduate)",
-      company: "Coding Camp powered by DBS Foundation",
-      period: "Feb 2026 – Jul 2026",
-      location: "Indonesia",
-      points: [
-        "Lulus dengan predikat Distinction (Top 10% dari 2.800 peserta terpilih) tepat waktu tanpa catatan pelanggaran.",
-        "Meraih nilai hampir sempurna (96/100) pada modul Build Advanced Deep Learning Projects (Custom CNN, Custom Training Loop, Custom Layers/Loss dengan TensorFlow).",
-        "Berperan sebagai Model Builder pada proyek Capstone FAST (Fintech OCR) dan meraih skor CEFR B2 (82%) serta nilai 90/100 pada 7 modul Soft Skills & Career Development."
-      ]
-    },
-    {
-      role: "React & Back End with AI Cohort",
-      company: "Asah led by Dicoding",
-      period: "Agu 2025 – Jan 2026",
-      location: "Indonesia",
-      points: [
-        "Mengembangkan platform full-stack predictive maintenance berbasis AI (Maintify) sebagai Capstone Project (250 jam, skor 94/100).",
-        "Membangun Open Music RESTful API dengan JWT, Redis caching, dan RabbitMQ (skor 86/100) serta aplikasi web React interaktif (skor 91/100 & 94/100)."
-      ]
-    },
-    {
-      role: "Data Science & Generative AI Cohort",
-      company: "Celerates",
-      period: "Sep 2025 – Des 2025",
-      location: "Indonesia",
-      points: [
-        "Menyelesaikan program intensif 4 bulan dengan nilai akhir 94.70 (Grade A) mencakup 7 modul inti Data Science hingga Generative AI.",
-        "Merancang dan merilis proyek akhir 'AI-Powered Loan Approval Simulator for MSMEs' menggunakan model terbaik XGBoost."
-      ]
-    },
-    {
       role: "Data Management Support",
       company: "Kementerian Perhubungan Republik Indonesia",
       period: "Jul 2025 – Sep 2025",
       location: "Jakarta Pusat, Indonesia",
+      image: "./assets/img/kemenhub2025.jpg",
       points: [
         "Mengelola dan memvalidasi 800+ baris data pelabuhan nasional menggunakan Excel & Google Sheets (efisiensi pengolahan data naik 20%).",
         "Mengoptimalkan SOP manajemen data yang mempercepat integrasi lintas unit sebesar 30%, serta merancang alur integrasi sistem SIMPEL, SIPANDU, dan SIFASPEL.",
@@ -229,6 +167,7 @@ const PORTFOLIO_DATA = {
       company: "Tape Koe",
       period: "Jun 2024 – Jun 2025",
       location: "Kab. Bekasi, Jawa Barat",
+      image: "./assets/img/experience-placeholder.svg",
       points: [
         "Mengevaluasi performa bisnis melalui analisis data keuangan dan penjualan yang menghasilkan peningkatan profitabilitas sebesar 25% pada bulan pertama.",
         "Menyusun strategi bisnis terarah yang meningkatkan efisiensi operasional sebesar 30%, menekan biaya 15%, dan mendukung target pertumbuhan tahunan 40%."
@@ -238,7 +177,8 @@ const PORTFOLIO_DATA = {
       role: "Junior Data Scientist",
       company: "VINIX7",
       period: "Feb 2025 – Mei 2025",
-      location: "Jakarta Metropolitan Area",
+      location: "Remote",
+      image: "./assets/img/vinix7.jpg",
       points: [
         "Menganalisis 9 modul proyek data menggunakan Excel, Python, dan Tableau dari 100+ respons pengguna (mempercepat interpretasi data hingga 50%).",
         "Membangun model prediktif (regresi, k-NN, k-Means) dengan Orange & Python yang mencapai akurasi hingga 84% dan menghasilkan 3+ segmen pengguna."
@@ -249,6 +189,7 @@ const PORTFOLIO_DATA = {
       company: "PT Bank Muamalat Indonesia Tbk x Rakamin",
       period: "Feb 2025 – Mar 2025",
       location: "Jakarta, Indonesia",
+      image: "./assets/img/bm-cert.jpg",
       points: [
         "Mengelola 4 dataset (3.300+ baris) menggunakan Python & Google Colab dengan akurasi 100% dan membangun dashboard Looker Studio untuk 11.000+ transaksi penjualan."
       ]
@@ -258,29 +199,21 @@ const PORTFOLIO_DATA = {
       company: "PT Kimia Farma Tbk x Rakamin",
       period: "Jan 2025 – Feb 2025",
       location: "Jakarta, Indonesia",
+      image: "./assets/img/kf-cert.jpg",
       points: [
         "Mengoptimalkan query SQL atas 1 juta+ baris data di Google BigQuery (efisiensi naik 30%) dan memvisualisasikan 600.000+ transaksi di Looker Studio."
-      ]
-    },
-    {
-      role: "Video Editor & Data Entry Assistant",
-      company: "PT Indocement Tunggal Prakarsa Tbk",
-      period: "Jul 2022 – Okt 2022",
-      location: "Bogor, Jawa Barat",
-      points: [
-        "Memproduksi video materi pembelajaran karyawan menggunakan Adobe After Effects 2020.",
-        "Menginput dan memvalidasi 100+ data karyawan dengan tingkat akurasi 99.8% serta menurunkan diskrepansi data sebesar 30%."
       ]
     }
   ],
 
-  // Timeline Pendidikan & Organisasi
+  // 2. Pendidikan
   educations: [
     {
       role: "S1 Teknologi Informasi (Bachelor's Degree)",
       company: "Universitas Telkom (Telkom University)",
       period: "2023 – 2027",
       location: "Jakarta / Bandung, Indonesia",
+      image: "./assets/img/experience-placeholder.svg",
       points: [
         "Mahasiswa tingkat akhir dengan fokus pada Data Analytics, Business Intelligence, Cloud Computing, dan Artificial Intelligence.",
         "Peraih 3x penghargaan Best Participant/Student di Talent Class (Cloud Computing Batch 15, Data Science Batch 16, Excel for BI Batch 19)."
@@ -291,17 +224,9 @@ const PORTFOLIO_DATA = {
       company: "PR Institute",
       period: "Sep 2024 – Des 2024",
       location: "Indonesia",
+      image: "./assets/img/prinstitute.jpg",
       points: [
         "Mempelajari komunikasi persuasif, presentasi eksekutif, dan penyampaian insight data secara efektif kepada pemangku kepentingan."
-      ]
-    },
-    {
-      role: "Core Team Creative Division",
-      company: "Google Developer Student Clubs (GDSC) Telkom University Jakarta",
-      period: "Des 2023 – Des 2024",
-      location: "Jakarta Selatan, Indonesia",
-      points: [
-        "Aktif mengelola kebutuhan kreatif, branding visual, dan publikasi kegiatan komunitas developer mahasiswa selama lebih dari 1 tahun."
       ]
     },
     {
@@ -309,8 +234,71 @@ const PORTFOLIO_DATA = {
       company: "SMKN 1 Cibinong",
       period: "Jul 2020 – Mei 2023",
       location: "Kab. Bogor, Jawa Barat",
+      image: "./assets/img/experience-placeholder.svg",
       points: [
         "Mempelajari dasar desain komunikasi visual, produksi multimedia, pengolahan video, dan teknologi digital."
+      ]
+    }
+  ],
+
+  // 3. Bootcamp (Cohort diubah menjadi Bootcamp)
+  bootcamps: [
+    {
+      role: "AI Engineer Bootcamp (Top 10% Distinction Graduate)",
+      company: "Coding Camp powered by DBS Foundation",
+      period: "Feb 2026 – Jul 2026",
+      location: "Indonesia",
+      image: "./assets/img/codingcamp2026.jpg",
+      points: [
+        "Lulus dengan predikat Distinction (Top 10% dari 2.800 peserta terpilih) tepat waktu tanpa catatan pelanggaran.",
+        "Meraih nilai hampir sempurna (96/100) pada modul Build Advanced Deep Learning Projects (Custom CNN, Custom Training Loop, Custom Layers/Loss dengan TensorFlow).",
+        "Berperan sebagai Model Builder pada proyek Capstone FAST (Fintech OCR) dan meraih skor CEFR B2 (82%) serta nilai 90/100 pada 7 modul Soft Skills & Career Development."
+      ]
+    },
+    {
+      role: "React & Back End with AI Bootcamp",
+      company: "Asah led by Dicoding",
+      period: "Agu 2025 – Jan 2026",
+      location: "Indonesia",
+      image: "./assets/img/asah2025.jpg",
+      points: [
+        "Mengembangkan platform full-stack predictive maintenance berbasis AI (Maintify) sebagai Capstone Project (250 jam, skor 94/100).",
+        "Membangun Open Music RESTful API dengan JWT, Redis caching, dan RabbitMQ (skor 86/100) serta aplikasi web React interaktif (skor 91/100 & 94/100)."
+      ]
+    },
+    {
+      role: "Data Science & Generative AI Bootcamp",
+      company: "Celerates",
+      period: "Sep 2025 – Des 2025",
+      location: "Indonesia",
+      image: "./assets/img/camp2025.jpg",
+      points: [
+        "Menyelesaikan program intensif 4 bulan dengan nilai akhir 94.70 (Grade A) mencakup 7 modul inti Data Science hingga Generative AI.",
+        "Merancang dan merilis proyek akhir 'AI-Powered Loan Approval Simulator for MSMEs' menggunakan model terbaik XGBoost."
+      ]
+    }
+  ],
+
+  // 4. Organisasi
+  organizations: [
+    {
+      role: "Google Student Ambassador",
+      company: "Google",
+      period: "Okt 2026 – Sekarang",
+      location: "Indonesia",
+      image: "./assets/img/experience-placeholder.svg",
+      points: [
+        "Terpilih sebagai Google Student Ambassador yang menjembatani ekosistem teknologi Google dengan komunitas mahasiswa di kampus."
+      ]
+    },
+    {
+      role: "Core Team Creative Division",
+      company: "Google Developer Student Clubs (GDSC) Telkom University Jakarta",
+      period: "Des 2023 – Des 2024",
+      location: "Jakarta Selatan, Indonesia",
+      image: "./assets/img/experience-placeholder.svg",
+      points: [
+        "Aktif mengelola kebutuhan kreatif, branding visual, dan publikasi kegiatan komunitas developer mahasiswa selama 1 tahun."
       ]
     }
   ]
@@ -429,39 +417,62 @@ function renderProjects(filterCategory = "all") {
   initLucideIcons();
 }
 
-// Render Timeline Pengalaman & Pendidikan
+// Render Timeline Pengalaman Kerja, Pendidikan, Bootcamp & Organisasi
 function renderTimelines() {
-  const expContainer = document.getElementById("experienceTimeline");
+  const workContainer = document.getElementById("workTimeline");
   const eduContainer = document.getElementById("educationTimeline");
+  const bootContainer = document.getElementById("bootcampTimeline");
+  const orgContainer = document.getElementById("organizationTimeline");
 
   const createTimelineHTML = (items) =>
-    items
+    (items || [])
       .map(
         (item) => `
       <div class="timeline-item reveal-up">
         <span class="timeline-dot" aria-hidden="true"></span>
         <article class="timeline-card">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-role">${item.role}</h3>
-              <p class="timeline-company">${item.company}</p>
+          <div class="timeline-card-main">
+            <div class="timeline-card-info">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">${item.role}</h3>
+                  <p class="timeline-company">${item.company}</p>
+                </div>
+                <span class="timeline-period">
+                  <i data-lucide="calendar"></i> ${item.period}
+                </span>
+              </div>
+              <p class="timeline-location">📍 ${item.location}</p>
+              <ul class="timeline-points">
+                ${item.points.map((pt) => `<li>${pt}</li>`).join("")}
+              </ul>
             </div>
-            <span class="timeline-period">
-              <i data-lucide="calendar"></i> ${item.period}
-            </span>
+            <div class="timeline-card-media">
+              <div class="timeline-img-box">
+                <img 
+                  src="${item.image || './assets/img/experience-placeholder.svg'}" 
+                  alt="Dokumentasi ${item.role} - ${item.company}" 
+                  class="timeline-img" 
+                  loading="lazy"
+                />
+                <span class="timeline-img-badge">
+                  <i data-lucide="image"></i> Dokumentasi
+                </span>
+              </div>
+            </div>
           </div>
-          <p class="timeline-location">📍 ${item.location}</p>
-          <ul class="timeline-points">
-            ${item.points.map((pt) => `<li>${pt}</li>`).join("")}
-          </ul>
         </article>
       </div>
     `
       )
       .join("");
 
-  if (expContainer) expContainer.innerHTML = createTimelineHTML(PORTFOLIO_DATA.experiences);
+  if (workContainer) workContainer.innerHTML = createTimelineHTML(PORTFOLIO_DATA.workExperiences);
   if (eduContainer) eduContainer.innerHTML = createTimelineHTML(PORTFOLIO_DATA.educations);
+  if (bootContainer) bootContainer.innerHTML = createTimelineHTML(PORTFOLIO_DATA.bootcamps);
+  if (orgContainer) orgContainer.innerHTML = createTimelineHTML(PORTFOLIO_DATA.organizations);
+
+  initLucideIcons();
 }
 
 /* -------------------- 4. FITUR TEMA DARK / LIGHT MODE -------------------- */
@@ -608,7 +619,7 @@ function initProjectFilter() {
   });
 }
 
-/* -------------------- 8. TAB PENGALAMAN & PENDIDIKAN -------------------- */
+/* -------------------- 8. TAB PENGALAMAN, PENDIDIKAN, BOOTCAMP & ORGANISASI -------------------- */
 function initTimelineTabs() {
   const tabBtns = document.querySelectorAll(".timeline-tab-btn");
   const timelines = document.querySelectorAll(".timeline-wrapper");
@@ -621,8 +632,17 @@ function initTimelineTabs() {
       btn.classList.add("active");
 
       timelines.forEach((tl) => {
-        tl.classList.toggle("active", tl.id === targetId);
+        const isActive = tl.id === targetId;
+        tl.classList.toggle("active", isActive);
+        if (isActive) {
+          // Pastikan item di timeline yang baru aktif langsung muncul mulus
+          tl.querySelectorAll(".timeline-item").forEach((item) => {
+            item.classList.add("revealed");
+          });
+        }
       });
+
+      initLucideIcons();
     });
   });
 }

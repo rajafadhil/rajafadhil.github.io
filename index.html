@@ -53,8 +53,8 @@
   <header class="navbar-header" id="navbarHeader">
     <div class="container navbar-container">
       <a href="#beranda" class="brand-logo" aria-label="Beranda Ahmad Raja Fadhil">
-        <span class="logo-badge">RF</span>
-        <span class="logo-text">Raja<span class="text-secondary">Fadhil</span></span>
+        <span class="logo-badge"><img src="./assets/img/My Logo.svg" alt="Logo" class="logo" /></span>
+        <span class="logo-text">Ahmad<span class="text-secondary">Raja</span></span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
@@ -122,10 +122,6 @@
               <span>Lihat Proyek</span>
               <i data-lucide="arrow-right"></i>
             </a>
-            <a href="./Profile.pdf" download="CV_Ahmad_Raja_Fadhil.pdf" class="btn btn-outline">
-              <i data-lucide="download"></i>
-              <span>Unduh CV</span>
-            </a>
           </div>
 
           <div class="hero-socials">
@@ -156,7 +152,7 @@
             <div class="blob-bg" aria-hidden="true"></div>
             <div class="orbit-ring" aria-hidden="true"></div>
 
-            <img src="./assets/img/profile-placeholder.svg" alt="Foto profil Ahmad Raja Fadhil" class="profile-img"
+            <img src="./assets/img/profile.jpg" alt="Foto profil Ahmad Raja Fadhil" class="profile-img"
               width="400" height="400" />
 
             <!-- Floating Card Badges -->
@@ -193,7 +189,7 @@
           <!-- Kolom Kiri: Visual & Highlight Sertifikasi/Penghargaan -->
           <div class="about-card-highlight reveal-up">
             <div class="about-photo-box">
-              <img src="./assets/img/profile-placeholder.svg" alt="Ilustrasi Aktivitas Data dan AI Ahmad Raja Fadhil"
+              <img src="./assets/img/profile.jpg" alt="Ilustrasi Aktivitas Data dan AI Ahmad Raja Fadhil"
                 loading="lazy" width="360" height="300" />
             </div>
 
@@ -207,7 +203,7 @@
                   Foundation (dari 2.800 peserta terpilih).
                 </li>
                 <li>
-                  <strong>Best Student</strong> — Talent Class Batch 19: Excel for Business Intelligence.
+                  <strong>Best Participant</strong> — Talent Class Batch 19: Excel for Business Intelligence.
                 </li>
                 <li>
                   <strong>Best Participant</strong> — Talent Class Batch 16: Data Science Fundamentals.
@@ -277,7 +273,7 @@
 
               <div class="stat-card">
                 <div class="stat-number-wrap">
-                  <span class="stat-number" data-target="10">0</span>
+                  <span class="stat-number" data-target="6">0</span>
                   <span class="stat-suffix">+</span>
                 </div>
                 <p class="stat-label">Pengalaman Magang &amp; Cohort Industri</p>
@@ -380,23 +376,39 @@
           </p>
         </div>
 
-        <!-- Tab Switcher: Pengalaman vs Pendidikan -->
+        <!-- Tab Switcher: 4 Kategori (Pengalaman Kerja, Pendidikan, Bootcamp, Organisasi) -->
         <div class="timeline-tabs reveal-up">
-          <button type="button" class="timeline-tab-btn active" data-target="experienceTimeline">
-            <i data-lucide="briefcase"></i> Pengalaman Kerja &amp; Cohort
+          <button type="button" class="timeline-tab-btn active" data-target="workTimeline">
+            <i data-lucide="briefcase"></i> Pengalaman Kerja
           </button>
           <button type="button" class="timeline-tab-btn" data-target="educationTimeline">
-            <i data-lucide="graduation-cap"></i> Pendidikan &amp; Organisasi
+            <i data-lucide="graduation-cap"></i> Pendidikan
+          </button>
+          <button type="button" class="timeline-tab-btn" data-target="bootcampTimeline">
+            <i data-lucide="code-2"></i> Bootcamp
+          </button>
+          <button type="button" class="timeline-tab-btn" data-target="organizationTimeline">
+            <i data-lucide="users"></i> Organisasi
           </button>
         </div>
 
-        <!-- Timeline Pengalaman Kerja (Dirender dari js/main.js) -->
-        <div class="timeline-wrapper active" id="experienceTimeline">
+        <!-- 1. Timeline Pengalaman Kerja (Dirender dari js/main.js) -->
+        <div class="timeline-wrapper active" id="workTimeline">
           <!-- Item timeline dirender oleh JavaScript -->
         </div>
 
-        <!-- Timeline Pendidikan & Organisasi (Dirender dari js/main.js) -->
+        <!-- 2. Timeline Pendidikan (Dirender dari js/main.js) -->
         <div class="timeline-wrapper" id="educationTimeline">
+          <!-- Item timeline dirender oleh JavaScript -->
+        </div>
+
+        <!-- 3. Timeline Bootcamp (Dirender dari js/main.js) -->
+        <div class="timeline-wrapper" id="bootcampTimeline">
+          <!-- Item timeline dirender oleh JavaScript -->
+        </div>
+
+        <!-- 4. Timeline Organisasi (Dirender dari js/main.js) -->
+        <div class="timeline-wrapper" id="organizationTimeline">
           <!-- Item timeline dirender oleh JavaScript -->
         </div>
       </div>
@@ -448,7 +460,7 @@
               <a href="https://www.linkedin.com/in/ahmadrajaf" target="_blank" rel="noopener noreferrer"
                 class="contact-item-card">
                 <div class="contact-icon">
-                  <i data-lucide="linkedin"></i>
+                  <i><img src="./assets/img/linkedin.png" alt="LinkedIn"></i>
                 </div>
                 <div>
                   <span class="contact-label">LinkedIn</span>
@@ -459,7 +471,7 @@
               <a href="https://www.instagram.com/raja.f_007/" target="_blank" rel="noopener noreferrer"
                 class="contact-item-card">
                 <div class="contact-icon">
-                  <i data-lucide="instagram"></i>
+                  <i><img src="./assets/img/instagram.png" alt="Instagram"></i>
                 </div>
                 <div>
                   <span class="contact-label">Instagram</span>

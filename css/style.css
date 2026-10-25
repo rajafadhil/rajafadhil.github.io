@@ -1282,6 +1282,7 @@ button {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
@@ -1428,6 +1429,95 @@ button {
   left: 0;
   color: var(--secondary);
   font-weight: 800;
+}
+
+/* Layout Kartu Timeline dengan Media Gambar */
+.timeline-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.timeline-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-card-media {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.timeline-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-section-cream);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.timeline-card:hover .timeline-img {
+  transform: scale(1.05);
+}
+
+.timeline-img-badge {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(5, 66, 92, 0.88);
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.timeline-img-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="dark"] .timeline-img-box {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .timeline-img-badge {
+  background: rgba(14, 77, 110, 0.92);
+  color: var(--cream);
+}
+
+@media (max-width: 768px) {
+  .timeline-card-main {
+    flex-direction: column;
+  }
+
+  .timeline-card-media {
+    width: 100%;
+    margin-top: 1.1rem;
+  }
+
+  .timeline-img-box {
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+  }
 }
 
 /* -------------------- 11. KONTAK SECTION -------------------- */
