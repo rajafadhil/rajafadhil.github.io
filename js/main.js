@@ -63,14 +63,14 @@ const PORTFOLIO_DATA = {
   // Daftar Proyek (Mendukung filter: 'data', 'ai', 'web')
   projects: [
     {
-      title: "FraudGuard - Fraud Detection Model and Dashboard",
+      title: "FraudGuard - Credit Card Fraud Detection",
       organization: "Individual",
       category: "web",
       categoryLabel: "Web & AI",
       description:
         "FraudGuard is a comprehensive fraud detection and prevention system that combines a real-time fraud detection model with an interactive dashboard. The system is designed to identify and analyze fraudulent activities using advanced machine learning techniques, providing users with actionable insights to mitigate risks.",
       tech: ["React.js", "Python", "Random Forest", "Fraud Detection Model"],
-      image: "./assets/img/project-placeholder.svg",
+      image: "./assets/img/ccfraud.jpg",
       demoUrl: "https://drive.google.com/file/d/1hxMuwsLZJyV2lhSK-j2DZbY66V04jI48/view?usp=drive_link",
       repoUrl: "https://github.com/rajafadhil/fraud-guard"
     },
