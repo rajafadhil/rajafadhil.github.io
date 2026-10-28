@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahmad Raja Fadhil | Data, AI & Web Portfolio</title>
 
-  <!-- Meta SEO & Deskripsi -->
+  <!-- Meta SEO & Description -->
   <meta name="description"
-    content="Portofolio resmi Ahmad Raja Fadhil — Mahasiswa S1 Teknologi Informasi Telkom University, Center of Excellence Intern di PT Pegadaian, Microsoft & Alibaba Cloud Certified AI/Data Enthusiast." />
+    content="Official portfolio of Ahmad Raja Fadhil — Senior Undergraduate in Information Technology at Telkom University, Digital Center of Excellence Intern at PT Pegadaian, Microsoft & Alibaba Cloud Certified AI/Data Enthusiast." />
   <meta name="keywords"
-    content="Ahmad Raja Fadhil, Data Analyst, AI Engineer, Business Intelligence, Web Developer, Telkom University, Portofolio" />
+    content="Ahmad Raja Fadhil, Data Analyst, AI Engineer, Business Intelligence, Web Developer, Telkom University, Portfolio" />
   <meta name="author" content="Ahmad Raja Fadhil" />
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ahmad Raja Fadhil | Data, AI & Web Portfolio" />
   <meta property="og:description"
-    content="Mengubah data menjadi insight strategis dan membangun solusi cerdas berbasis AI & Web. Lihat proyek dan pengalaman kerja Ahmad Raja Fadhil." />
+    content="Transforming complex data into strategic insights and developing intelligent AI & Web solutions. Explore the projects and professional journey of Ahmad Raja Fadhil." />
   <meta property="og:url" content="https://rajafadhil.github.io/" />
   <meta property="og:image" content="./assets/img/profile-placeholder.svg" />
 
-  <!-- Favicon Inline SVG (Inisial RF dengan warna --primary #086288 & --cream #FFEFC4) -->
+  <!-- Favicon Inline SVG (Initial RF with color --primary #086288 & --cream #FFEFC4) -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23086288'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='44' fill='%23FFEFC4'>RF</text></svg>" />
 
@@ -35,49 +35,49 @@
   <!-- Lucide Icons (via CDN) -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Stylesheet Utama (Path Relatif untuk GitHub Pages) -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
 
-  <!-- Scroll Progress Bar di Atas Halaman -->
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress-container" aria-hidden="true">
     <div class="scroll-progress-bar" id="scrollProgressBar"></div>
   </div>
 
-  <!-- Skip to Content untuk Aksesibilitas Keyboard -->
-  <a href="#beranda" class="skip-link">Lewati ke konten utama</a>
+  <!-- Skip to Content for Accessibility -->
+  <a href="#home" class="skip-link">Skip to main content</a>
 
-  <!-- ==================== 1. NAVBAR STICKY ==================== -->
+  <!-- ==================== 1. STICKY NAVBAR ==================== -->
   <header class="navbar-header" id="navbarHeader">
     <div class="container navbar-container">
-      <a href="#beranda" class="brand-logo" aria-label="Beranda Ahmad Raja Fadhil">
+      <a href="#home" class="brand-logo" aria-label="Ahmad Raja Fadhil Home">
         <span class="logo-badge"><img src="./assets/img/My Logo.svg" alt="Logo" class="logo" /></span>
         <span class="logo-text">Ahmad<span class="text-secondary">Raja</span></span>
       </a>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="#beranda" class="nav-link active">Beranda</a></li>
-          <li><a href="#tentang" class="nav-link">Tentang</a></li>
-          <li><a href="#keahlian" class="nav-link">Keahlian</a></li>
-          <li><a href="#proyek" class="nav-link">Proyek</a></li>
-          <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
-          <li><a href="#kontak" class="nav-link">Kontak</a></li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <!-- Tombol Toggle Dark/Light Mode -->
-        <button type="button" class="theme-toggle-btn" id="themeToggleBtn"
-          aria-label="Ganti mode warna gelap atau terang" title="Ganti Tema">
+        <!-- Toggle Dark/Light Mode Button -->
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark or light mode"
+          title="Switch Theme">
           <i data-lucide="moon" class="icon-moon"></i>
           <i data-lucide="sun" class="icon-sun"></i>
         </button>
 
-        <!-- Tombol Hamburger Menu (Mobile) -->
-        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Buka menu navigasi"
+        <!-- Mobile Hamburger Menu Button -->
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu"
           aria-expanded="false" aria-controls="navMenu">
           <i data-lucide="menu" class="icon-menu"></i>
           <i data-lucide="x" class="icon-close"></i>
@@ -88,44 +88,46 @@
 
   <main>
     <!-- ==================== 2. HERO SECTION ==================== -->
-    <section id="beranda" class="hero-section">
-      <!-- Dekorasi Bentuk Abstrak / Blob -->
+    <section id="home" class="hero-section">
+      <!-- Abstract Blob Shapes -->
       <div class="hero-shape shape-1" aria-hidden="true"></div>
       <div class="hero-shape shape-2" aria-hidden="true"></div>
 
       <div class="container hero-container">
-        <!-- Kolom Kiri: Teks & CTA -->
+        <!-- Left Column: Text & CTA -->
         <div class="hero-content reveal-up">
           <div class="hero-badge">
             <span class="status-dot"></span>
-            <span>Terbuka untuk Peluang Data, BI & AI</span>
+            <span>Open to Data, BI &amp; AI Opportunities</span>
           </div>
 
-          <p class="hero-greeting">Halo, perkenalkan saya</p>
+          <p class="hero-greeting">Hi, I'm</p>
           <h1 class="hero-title">Ahmad Raja Fadhil</h1>
 
           <div class="hero-typing-wrapper" aria-live="polite">
-            <span class="typing-prefix">Fokus sebagai </span>
+            <span class="typing-prefix">Focused as </span>
             <span class="typing-text" id="typingText">Data & BI Enthusiast</span>
             <span class="typing-cursor" aria-hidden="true">|</span>
           </div>
 
           <p class="hero-description">
-            Mahasiswa tingkat akhir S1 Teknologi Informasi di <strong>Telkom University</strong> &amp; <strong>Center of
-              Excellence Intern di PT Pegadaian</strong>. Tersertifikasi oleh <em>Microsoft (AI-900, AI-102,
-              DP-600)</em> dan <em>Alibaba Cloud Gen AI</em>. Mengubah data kompleks menjadi insight strategis serta
-            solusi AI &amp; Web yang berdampak nyata.
+            Final-year Information Technology student at <strong>Telkom University</strong> &amp; <strong>Digital Center
+              of
+              Excellence Intern at PT Pegadaian</strong>. Certified in <em>Microsoft (AI-900, AI-102,
+              DP-600)</em> and <em>Alibaba Cloud Gen AI</em>. Transforming complex data into actionable strategic
+            insights
+            and impactful AI &amp; Web solutions.
           </p>
 
           <div class="hero-cta-group">
-            <a href="#proyek" class="btn btn-primary">
-              <span>Lihat Proyek</span>
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
               <i data-lucide="arrow-right"></i>
             </a>
           </div>
 
           <div class="hero-socials">
-            <span class="social-label">Temukan saya di:</span>
+            <span class="social-label">Find me on:</span>
             <div class="social-links">
               <a href="https://www.linkedin.com/in/ahmadrajaf" target="_blank" rel="noopener noreferrer"
                 aria-label="LinkedIn Ahmad Raja Fadhil" title="LinkedIn">
@@ -139,21 +141,21 @@
                 aria-label="Instagram Ahmad Raja Fadhil" title="Instagram">
                 <i data-lucide="instagram"></i>
               </a>
-              <a href="mailto:fadhilahmadraja@gmail.com" aria-label="Kirim Email ke Ahmad Raja Fadhil" title="Email">
+              <a href="mailto:fadhilahmadraja@gmail.com" aria-label="Send Email to Ahmad Raja Fadhil" title="Email">
                 <i data-lucide="mail"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Kolom Kanan: Ilustrasi / Foto Profil dengan Dekorasi Abstrak -->
+        <!-- Right Column: Profile Photo Visual & Badges -->
         <div class="hero-visual reveal-up">
           <div class="profile-frame">
             <div class="blob-bg" aria-hidden="true"></div>
             <div class="orbit-ring" aria-hidden="true"></div>
 
-            <img src="./assets/img/profile.jpg" alt="Foto profil Ahmad Raja Fadhil" class="profile-img"
-              width="400" height="400" />
+            <img src="./assets/img/profile.jpg" alt="Profile photo of Ahmad Raja Fadhil" class="profile-img" width="400"
+              height="400" />
 
             <!-- Floating Card Badges -->
             <div class="floating-badge badge-top-right">
@@ -176,31 +178,31 @@
       </div>
     </section>
 
-    <!-- ==================== 3. TENTANG SAYA ==================== -->
+    <!-- ==================== 3. ABOUT ME ==================== -->
     <section id="tentang" class="section bg-cream">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-subtitle">Mengenal Lebih Dekat</span>
-          <h2 class="section-title">Tentang Saya</h2>
+          <span class="section-subtitle">Get to Know Me</span>
+          <h2 class="section-title">About Me</h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="about-grid">
-          <!-- Kolom Kiri: Visual & Highlight Sertifikasi/Penghargaan -->
+          <!-- Left Column: Photo & Key Awards -->
           <div class="about-card-highlight reveal-up">
             <div class="about-photo-box">
-              <img src="./assets/img/profile.jpg" alt="Ilustrasi Aktivitas Data dan AI Ahmad Raja Fadhil"
+              <img src="./assets/img/profile.jpg" alt="Ahmad Raja Fadhil data and AI activities illustration"
                 loading="lazy" width="360" height="300" />
             </div>
 
             <div class="awards-box">
               <h3 class="awards-title">
-                <i data-lucide="medal"></i> Penghargaan &amp; Pencapaian Utama
+                <i data-lucide="medal"></i> Key Honors &amp; Achievements
               </h3>
               <ul class="awards-list">
                 <li>
                   <strong>Top 10% Graduates (Distinction)</strong> — AI Engineer Cohort, Coding Camp powered by DBS
-                  Foundation (dari 2.800 peserta terpilih).
+                  Foundation (selected from 2,800 participants).
                 </li>
                 <li>
                   <strong>Best Participant</strong> — Talent Class Batch 19: Excel for Business Intelligence.
@@ -212,32 +214,42 @@
                   <strong>Best Participant</strong> — Talent Class Batch 15: Introduction to Cloud Computing.
                 </li>
               </ul>
+              <div class="awards-action">
+                <a href="http://linkedin.com/in/ahmadrajaf/details/honors/" target="_blank" rel="noopener noreferrer"
+                  class="awards-btn" aria-label="Open honors and certificates page in a new tab">
+                  <span>More detail</span>
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Kolom Kanan: Bio & Statistik Count-up -->
+          <!-- Right Column: Bio & Count-up Stats -->
           <div class="about-content reveal-up">
             <h3 class="about-heading">
-              Menjembatani Teori Akademik dengan Solusi Industri Berbasis Data &amp; AI
+              Bridging Academic Theory with Data &amp; AI-Driven Industry Solutions
             </h3>
 
             <p class="about-text">
-              Saya adalah mahasiswa tahun terakhir jurusan <strong>Teknologi Informasi di Universitas Telkom</strong>
-              (2023–2027) yang memiliki antusiasme tinggi di bidang <em>Data Analytics, Business Intelligence, dan
-                Artificial Intelligence</em>. Saat ini, saya aktif berkontribusi sebagai <strong>Digital Center of
-                Excellence Intern di PT Pegadaian</strong> serta berperan sebagai <strong>Google Student
+              I am a final-year student majoring in <strong>Information Technology at Telkom University</strong>
+              (2023–2027) with a deep passion for <em>Data Analytics, Business Intelligence, and
+                Artificial Intelligence</em>. Currently, I am actively contributing as a <strong>Digital Center of
+                Excellence Intern at PT Pegadaian</strong> and serving as a <strong>Google Student
                 Ambassador</strong>.
             </p>
             <p class="about-text">
-              Dengan keahlian teknis menggunakan <strong>Python, SQL, TensorFlow, serta perangkat BI (Tableau, Power BI,
-                Looker Studio)</strong>, saya terbiasa mengolah jutaan baris data menjadi <em>actionable insights</em>
-              dan membangun otomasi alur kerja. Pengalaman saya mencakup evaluasi 10+ POC strategis berskala global,
-              pengelolaan data pelabuhan nasional di <strong>Kementerian Perhubungan RI</strong>, peningkatan
-              profitabilitas bisnis di <strong>Tape Koe</strong>, hingga pembangunan sistem <em>Full-Stack AI</em> dan
-              <em>Computer Vision</em> melalui program <strong>DBS Foundation, Asah by Dicoding, dan Celerates</strong>.
+              Equipped with technical skills in <strong>Python, SQL, TensorFlow, and BI tools (Tableau, Power BI,
+                Looker Studio)</strong>, I specialize in transforming millions of data rows into <em>actionable
+                insights</em>
+              and building end-to-end workflow automations. My experience includes evaluating 10+ global strategic PoCs,
+              managing national port data at the <strong>Ministry of Transportation of the Republic of
+                Indonesia</strong>, driving
+              business profitability at <strong>Tape Koe</strong>, and engineering <em>Full-Stack AI</em> and
+              <em>Computer Vision</em> systems through programs by <strong>DBS Foundation, Asah by Dicoding, and
+                Celerates</strong>.
             </p>
 
-            <!-- Info Singkat -->
+            <!-- Quick Info -->
             <div class="about-info-pills">
               <div class="info-pill">
                 <i data-lucide="map-pin"></i>
@@ -245,22 +257,24 @@
               </div>
               <div class="info-pill">
                 <i data-lucide="graduation-cap"></i>
-                <span>S1 Teknologi Informasi, Telkom University</span>
+                <span>B.S. in Information Technology, Telkom University (2023 - 2027)</span>
               </div>
               <div class="info-pill">
                 <i data-lucide="globe"></i>
-                <span>Indonesia (Native), Inggris (CEFR B2), Jepang (Elementary)</span>
+                <span>Indonesian (Native), English (EPrt: 500, <a href="https://cert.efset.org/D81kT6" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open English certificate in a new tab"><u>EFSET:
+                      C1</u></a>), Japanese (Elementary)</span>
               </div>
             </div>
 
-            <!-- Statistik Animasi Count-Up -->
+            <!-- Animated Count-Up Stats -->
             <div class="stats-grid" id="statsContainer">
               <div class="stat-card">
                 <div class="stat-number-wrap">
                   <span class="stat-number" data-target="12">0</span>
                   <span class="stat-suffix">+</span>
                 </div>
-                <p class="stat-label">Proyek Data, AI &amp; Web</p>
+                <p class="stat-label">Data, AI &amp; Web Projects</p>
               </div>
 
               <div class="stat-card">
@@ -268,7 +282,7 @@
                   <span class="stat-number" data-target="7">0</span>
                   <span class="stat-suffix">+</span>
                 </div>
-                <p class="stat-label">Sertifikasi Global (Microsoft, Google, Alibaba)</p>
+                <p class="stat-label">Global Certifications (Microsoft, Google, Alibaba)</p>
               </div>
 
               <div class="stat-card">
@@ -276,7 +290,7 @@
                   <span class="stat-number" data-target="6">0</span>
                   <span class="stat-suffix">+</span>
                 </div>
-                <p class="stat-label">Pengalaman Magang &amp; Cohort Industri</p>
+                <p class="stat-label">Internship &amp; Industry Cohort Experiences</p>
               </div>
 
               <div class="stat-card">
@@ -284,7 +298,7 @@
                   <span class="stat-number" data-target="3">0</span>
                   <span class="stat-suffix">x</span>
                 </div>
-                <p class="stat-label">Penghargaan Best Participant</p>
+                <p class="stat-label">Best Participant Awards</p>
               </div>
             </div>
           </div>
@@ -292,63 +306,90 @@
       </div>
     </section>
 
-    <!-- ==================== 4. KEAHLIAN (SKILLS) ==================== -->
+    <!-- ==================== 4. SKILLS & CERTIFICATIONS ==================== -->
     <section id="keahlian" class="section bg-accent-soft">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-subtitle">Kompetensi Teknis &amp; Non-Teknis</span>
-          <h2 class="section-title">Keahlian &amp; Sertifikasi</h2>
+          <span class="section-subtitle">Technical &amp; Soft Competencies</span>
+          <h2 class="section-title">Skills &amp; Certifications</h2>
           <div class="section-divider"></div>
           <p class="section-desc">
-            Kombinasi keahlian analisis data, pemodelan kecerdasan buatan, pengembangan aplikasi web, serta komunikasi
-            profesional.
+            A balanced combination of data analytics expertise, artificial intelligence modeling, web application
+            development, and professional communication.
           </p>
         </div>
 
-        <!-- Container ini akan dirender otomatis dari objek data di js/main.js -->
+        <!-- Rendered automatically from PORTFOLIO_DATA in js/main.js -->
         <div class="skills-grid" id="skillsContainer" aria-live="polite">
-          <!-- Fallback konten jika JS belum dimuat -->
+          <!-- Fallback content if JS is not loaded -->
           <noscript>
-            <p>Aktifkan JavaScript untuk melihat visualisasi bar keahlian lengkap.</p>
+            <p>Please enable JavaScript to view the full skills progress visualization.</p>
           </noscript>
         </div>
 
-        <!-- Daftar Sertifikasi Resmi -->
+        <!-- Official Certifications Banner -->
         <div class="certifications-banner reveal-up">
           <h3 class="cert-heading">
-            <i data-lucide="badge-check"></i> Lisensi &amp; Sertifikasi Terverifikasi
+            <i data-lucide="badge-check"></i> Verified Licenses &amp; Certifications
           </h3>
           <div class="cert-badges-wrap">
-            <span class="cert-pill">Microsoft Certified: Azure AI Engineer (AI-102)</span>
-            <span class="cert-pill">Microsoft Certified: Fabric Analytics Engineer (DP-600)</span>
-            <span class="cert-pill">Microsoft Certified: Azure AI Fundamentals (AI-900)</span>
-            <span class="cert-pill">Microsoft Certified: SQL AI Developer Associate</span>
-            <span class="cert-pill">Alibaba Cloud Certified Associate: Generative AI Engineer</span>
-            <span class="cert-pill">Google Cloud Data Analytics Certificate</span>
-            <span class="cert-pill">Talent Class Batch 15: Cloud Computing</span>
-            <span class="cert-pill">Penggunaan Microsoft Excel for BI</span>
+            <a href="https://learn.microsoft.com/en-us/users/ahmadrajafadhil-1161/credentials/86721f9c837d1d7d" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Microsoft Certified: Azure AI Engineer (AI-102)">
+              <span>Microsoft Certified: Azure AI Engineer (AI-102)</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://learn.microsoft.com/en-us/users/ahmadrajafadhil-1161/credentials/6d68c857366ba00b" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Microsoft Certified: Fabric Analytics Engineer (DP-600)">
+              <span>Microsoft Certified: Fabric Analytics Engineer (DP-600)</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://www.credly.com/badges/d67c9b21-0ef0-4f8a-bba7-505c68f2d14d/public_url" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Microsoft Certified: Azure AI Fundamentals (AI-900)">
+              <span>Microsoft Certified: Azure AI Fundamentals (AI-900)</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/AhmadRajaFadhil-1161/CB916DE47CC03CD4?sharingId" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Microsoft Certified: SQL AI Developer Associate">
+              <span>Microsoft Certified: SQL AI Developer Associate (DP-800)</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/1NTJhwvC9gNsFub7J369J1wYYxfkW4uSB/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Alibaba Cloud Certified Associate: Generative AI Engineer">
+              <span>Alibaba Cloud Certified Associate: Generative AI Engineer</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://www.credly.com/badges/c4dfdf4d-4c25-400e-960f-c3ffb900f12b/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Google Cloud Data Analytics Certificate">
+              <span>Google Cloud Data Analytics Certificate</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/1fRzBCIrxa7oRKyqrTxng3dDoaqaQ9yRy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Talent Class Batch 15: Cloud Computing">
+              <span>BNSP Associate Data Scientist</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/M9EAEBTURX3S" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Google Project Management Professional Certificate">
+              <span>Google Project Management Professional Certificate</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/10E1YO3aPNQA9tztBpQI3tB4WfVw1LEBj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-pill" aria-label="Verify Microsoft Excel for Business Intelligence">
+              <span>FULLSTACK MICROSOFT EXCEL BASIC TO ADVANCED</span>
+              <i data-lucide="external-link"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== 5. PROYEK (PROJECTS) ==================== -->
+    <!-- ==================== 5. PROJECTS ==================== -->
     <section id="proyek" class="section bg-cream">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-subtitle">Karya &amp; Studi Kasus</span>
-          <h2 class="section-title">Proyek Pilihan</h2>
+          <span class="section-subtitle">Featured Works &amp; Case Studies</span>
+          <h2 class="section-title">Featured Projects</h2>
           <div class="section-divider"></div>
           <p class="section-desc">
-            Proyek end-to-end mulai dari dashboard Business Intelligence jutaan transaksi, model Machine Learning &amp;
-            Computer Vision, hingga aplikasi web Full-Stack.
+            End-to-end projects ranging from million-row Business Intelligence dashboards, Machine Learning &amp;
+            Computer Vision models, to Full-Stack web applications.
           </p>
         </div>
 
-        <!-- Tombol Filter Kategori Proyek -->
-        <div class="project-filters reveal-up" role="tablist" aria-label="Filter Kategori Proyek">
-          <button type="button" class="filter-btn active" data-filter="all" role="tab"
-            aria-selected="true">Semua</button>
+        <!-- Project Category Filters -->
+        <div class="project-filters reveal-up" role="tablist" aria-label="Project Category Filters">
+          <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
           <button type="button" class="filter-btn" data-filter="data" role="tab" aria-selected="false">Data &amp;
             BI</button>
           <button type="button" class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI &amp; Machine
@@ -357,83 +398,84 @@
             Full-Stack</button>
         </div>
 
-        <!-- Grid Kartu Proyek (Dirender via js/main.js agar mudah diedit) -->
+        <!-- Project Cards Grid (Rendered via js/main.js) -->
         <div class="projects-grid" id="projectsContainer" aria-live="polite">
-          <!-- Dirender oleh JavaScript -->
+          <!-- Rendered by JavaScript -->
         </div>
       </div>
     </section>
 
-    <!-- ==================== 6. PENGALAMAN & PENDIDIKAN ==================== -->
+    <!-- ==================== 6. EXPERIENCE & EDUCATION ==================== -->
     <section id="pengalaman" class="section bg-accent-soft">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-subtitle">Rekam Jejak Karir &amp; Akademik</span>
-          <h2 class="section-title">Pengalaman &amp; Pendidikan</h2>
+          <span class="section-subtitle">Career &amp; Academic Milestones</span>
+          <h2 class="section-title">Experience &amp; Education</h2>
           <div class="section-divider"></div>
           <p class="section-desc">
-            Perjalanan profesional di BUMN, kementerian, perusahaan swasta, dan program akselerasi teknologi nasional.
+            Professional trajectory across state-owned enterprises (BUMN), ministries, private companies, and national
+            technology acceleration programs.
           </p>
         </div>
 
-        <!-- Tab Switcher: 4 Kategori (Pengalaman Kerja, Pendidikan, Bootcamp, Organisasi) -->
+        <!-- Tab Switcher: 4 Categories (Work Experience, Education, Bootcamp, Organization) -->
         <div class="timeline-tabs reveal-up">
           <button type="button" class="timeline-tab-btn active" data-target="workTimeline">
-            <i data-lucide="briefcase"></i> Pengalaman Kerja
+            <i data-lucide="briefcase"></i> Work Experience
           </button>
           <button type="button" class="timeline-tab-btn" data-target="educationTimeline">
-            <i data-lucide="graduation-cap"></i> Pendidikan
+            <i data-lucide="graduation-cap"></i> Education
           </button>
           <button type="button" class="timeline-tab-btn" data-target="bootcampTimeline">
             <i data-lucide="code-2"></i> Bootcamp
           </button>
           <button type="button" class="timeline-tab-btn" data-target="organizationTimeline">
-            <i data-lucide="users"></i> Organisasi
+            <i data-lucide="users"></i> Organization
           </button>
         </div>
 
-        <!-- 1. Timeline Pengalaman Kerja (Dirender dari js/main.js) -->
+        <!-- 1. Work Experience Timeline (Rendered from js/main.js) -->
         <div class="timeline-wrapper active" id="workTimeline">
-          <!-- Item timeline dirender oleh JavaScript -->
+          <!-- Timeline items rendered by JavaScript -->
         </div>
 
-        <!-- 2. Timeline Pendidikan (Dirender dari js/main.js) -->
+        <!-- 2. Education Timeline (Rendered from js/main.js) -->
         <div class="timeline-wrapper" id="educationTimeline">
-          <!-- Item timeline dirender oleh JavaScript -->
+          <!-- Timeline items rendered by JavaScript -->
         </div>
 
-        <!-- 3. Timeline Bootcamp (Dirender dari js/main.js) -->
+        <!-- 3. Bootcamp Timeline (Rendered from js/main.js) -->
         <div class="timeline-wrapper" id="bootcampTimeline">
-          <!-- Item timeline dirender oleh JavaScript -->
+          <!-- Timeline items rendered by JavaScript -->
         </div>
 
-        <!-- 4. Timeline Organisasi (Dirender dari js/main.js) -->
+        <!-- 4. Organization Timeline (Rendered from js/main.js) -->
         <div class="timeline-wrapper" id="organizationTimeline">
-          <!-- Item timeline dirender oleh JavaScript -->
+          <!-- Timeline items rendered by JavaScript -->
         </div>
       </div>
     </section>
 
-    <!-- ==================== 7. KONTAK ==================== -->
+    <!-- ==================== 7. CONTACT ==================== -->
     <section id="kontak" class="section bg-cream">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-subtitle">Mari Berkolaborasi</span>
-          <h2 class="section-title">Hubungi Saya</h2>
+          <span class="section-subtitle">Let's Collaborate</span>
+          <h2 class="section-title">Get in Touch</h2>
           <div class="section-divider"></div>
           <p class="section-desc">
-            Tertarik berdiskusi mengenai peluang kerja di bidang Data Analytics, Business Intelligence, AI Engineering,
-            atau kolaborasi proyek? Jangan ragu untuk menghubungi saya!
+            Interested in discussing opportunities in Data Analytics, Business Intelligence, AI Engineering,
+            or project collaborations? Feel free to reach out!
           </p>
         </div>
 
         <div class="contact-grid">
-          <!-- Kolom Kiri: Info Kontak & Kartu Sosial Media -->
+          <!-- Left Column: Contact Info & Social Cards -->
           <div class="contact-info reveal-up">
-            <h3 class="contact-info-title">Informasi Kontak Langsung</h3>
+            <h3 class="contact-info-title">Direct Contact Information</h3>
             <p class="contact-info-text">
-              Saya berdomisili di area Jabodetabek (Bogor / Jakarta) dan siap untuk kesempatan kerja <em>On-site,
-                Hybrid, maupun Remote</em>.
+              I am based in the Greater Jakarta area (Bogor / Jakarta), Indonesia, and open to <em>On-site, Hybrid, and
+                Remote</em> opportunities.
             </p>
 
             <div class="contact-cards">
@@ -452,7 +494,7 @@
                   <i data-lucide="phone"></i>
                 </div>
                 <div>
-                  <span class="contact-label">Telepon / WhatsApp</span>
+                  <span class="contact-label">Phone / WhatsApp</span>
                   <strong class="contact-value">+62 822-1328-6381</strong>
                 </div>
               </a>
@@ -481,42 +523,41 @@
             </div>
           </div>
 
-          <!-- Kolom Kanan: Form Kontak (Mendukung Web3Forms / Formspree & Fallback Mailto) -->
+          <!-- Right Column: Contact Form (Supports Web3Forms / Fallback Mailto) -->
           <div class="contact-form-wrapper reveal-up">
             <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST"
               novalidate>
-              <!-- Opsional: Ganti value access_key di bawah jika ingin memakai Web3Forms, jika dibiarkan kosong otomatis fallback membuka aplikasi Email (mailto) -->
               <input type="hidden" name="access_key" id="web3formsKey" value="" />
 
-              <h3 class="form-title">Kirim Pesan Cepat</h3>
+              <h3 class="form-title">Send a Quick Message</h3>
 
               <div class="form-group">
-                <label for="senderName">Nama Lengkap <span class="required">*</span></label>
-                <input type="text" id="senderName" name="name" placeholder="Masukkan nama Anda" required
+                <label for="senderName">Full Name <span class="required">*</span></label>
+                <input type="text" id="senderName" name="name" placeholder="Enter your full name" required
                   autocomplete="name" />
               </div>
 
               <div class="form-group">
-                <label for="senderEmail">Alamat Email <span class="required">*</span></label>
-                <input type="email" id="senderEmail" name="email" placeholder="nama@perusahaan.com" required
+                <label for="senderEmail">Email Address <span class="required">*</span></label>
+                <input type="email" id="senderEmail" name="email" placeholder="name@company.com" required
                   autocomplete="email" />
               </div>
 
               <div class="form-group">
-                <label for="messageSubject">Subjek <span class="required">*</span></label>
+                <label for="messageSubject">Subject <span class="required">*</span></label>
                 <input type="text" id="messageSubject" name="subject"
-                  placeholder="Contoh: Tawaran Kerjasama / Rekrutmen Data Analyst" required />
+                  placeholder="e.g., Collaboration Inquiry / Data Analyst Recruitment" required />
               </div>
 
               <div class="form-group">
-                <label for="senderMessage">Pesan <span class="required">*</span></label>
+                <label for="senderMessage">Message <span class="required">*</span></label>
                 <textarea id="senderMessage" name="message" rows="4"
-                  placeholder="Tuliskan detail pesan atau diskusi yang ingin disampaikan..." required></textarea>
+                  placeholder="Share details about your message, discussion, or project..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                 <i data-lucide="send"></i>
-                <span>Kirim Pesan</span>
+                <span>Send Message</span>
               </button>
 
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -541,19 +582,19 @@
       </div>
 
       <div class="footer-links">
-        <h4>Navigasi Cepat</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#keahlian">Keahlian</a></li>
-          <li><a href="#proyek">Proyek</a></li>
-          <li><a href="#pengalaman">Pengalaman</a></li>
-          <li><a href="#kontak">Kontak</a></li>
+          <li><a href="#beranda">Home</a></li>
+          <li><a href="#tentang">About</a></li>
+          <li><a href="#keahlian">Skills</a></li>
+          <li><a href="#proyek">Projects</a></li>
+          <li><a href="#pengalaman">Experience</a></li>
+          <li><a href="#kontak">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-socials">
-        <h4>Jaringan Profesional</h4>
+        <h4>Professional Network</h4>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/ahmadrajaf" target="_blank" rel="noopener noreferrer"
             aria-label="LinkedIn">
@@ -574,18 +615,17 @@
     </div>
 
     <div class="container footer-bottom">
-      <p>&copy; <span id="currentYear">2026</span> <strong>Ahmad Raja Fadhil</strong>. Dibuat dengan HTML, CSS &amp; JS
-        Vanilla untuk GitHub Pages.</p>
+      <p>&copy; <span id="currentYear">2026</span> <strong>Ahmad Raja Fadhil</strong>. Crafted with Vanilla HTML, CSS
+        &amp; JS for GitHub Pages.</p>
 
-      <a href="#beranda" class="back-to-top" id="backToTopBtn" aria-label="Kembali ke atas halaman"
-        title="Kembali ke atas">
-        <span>Ke Atas</span>
+      <a href="#beranda" class="back-to-top" id="backToTopBtn" aria-label="Back to top of page" title="Back to Top">
+        <span>Back to Top</span>
         <i data-lucide="arrow-up"></i>
       </a>
     </div>
   </footer>
 
-  <!-- Script Utama (Path Relatif untuk GitHub Pages) -->
+  <!-- Main JavaScript File -->
   <script src="./js/main.js"></script>
 </body>
 

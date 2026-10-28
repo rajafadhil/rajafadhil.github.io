@@ -32,8 +32,10 @@
   --bg-navbar: rgba(255, 255, 255, 0.88);
   --bg-footer: var(--primary-deeper);
 
-  --text-main: #062333;       /* Biru sangat gelap, kontras > 14:1 di atas putih/krem */
-  --text-muted: #2E5266;      /* Biru keabuan tua, kontras > 7:1 */
+  --text-main: #062333;
+  /* Biru sangat gelap, kontras > 14:1 di atas putih/krem */
+  --text-muted: #2E5266;
+  /* Biru keabuan tua, kontras > 7:1 */
   --text-light: #F4FAFF;
   --heading-color: var(--primary);
 
@@ -68,8 +70,10 @@
   --bg-navbar: rgba(4, 30, 43, 0.90);
   --bg-footer: #02131C;
 
-  --text-main: #F0F8FF;       /* Putih kebiruan terang */
-  --text-muted: #B8D8ED;      /* Turunan terang dari --accent agar kontras AA di bg gelap */
+  --text-main: #F0F8FF;
+  /* Putih kebiruan terang */
+  --text-muted: #B8D8ED;
+  /* Turunan terang dari --accent agar kontras AA di bg gelap */
   --heading-color: var(--cream);
 
   --border-color: rgba(151, 215, 255, 0.18);
@@ -103,7 +107,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--heading-color);
   line-height: 1.25;
@@ -120,13 +129,16 @@ ul {
   list-style: none;
 }
 
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -559,8 +571,17 @@ button {
 }
 
 @keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
 }
 
 .hero-greeting {
@@ -606,8 +627,15 @@ button {
 }
 
 @keyframes blinkCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
@@ -695,8 +723,15 @@ button {
 }
 
 @keyframes morphBlob {
-  0% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: rotate(0deg); }
-  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(8deg); }
+  0% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(8deg);
+  }
 }
 
 .orbit-ring {
@@ -708,8 +743,13 @@ button {
 }
 
 @keyframes spinOrbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .profile-img {
@@ -1050,20 +1090,38 @@ button {
 }
 
 .cert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   background-color: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(151, 215, 255, 0.35);
   color: #FFFFFF;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.cert-pill svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .cert-pill:hover {
   background-color: var(--cream);
   color: var(--primary-deeper);
+  border-color: var(--cream);
   transform: translateY(-2px);
+}
+
+.cert-pill:hover svg {
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 /* -------------------- 9. PROYEK (PROJECTS) SECTION -------------------- */
@@ -1732,6 +1790,7 @@ button {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -1739,6 +1798,7 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
   .reveal-up {
     opacity: 1;
     transform: none;

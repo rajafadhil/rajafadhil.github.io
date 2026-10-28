@@ -60,7 +60,7 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  // Daftar Proyek (Mendukung filter: 'data', 'ai', 'web')
+  // Projects list (Supports filter: 'data', 'ai', 'web')
   projects: [
     {
       title: "FraudGuard - Credit Card Fraud Detection",
@@ -68,7 +68,7 @@ const PORTFOLIO_DATA = {
       category: "web",
       categoryLabel: "Web & AI",
       description:
-        "FraudGuard is a comprehensive fraud detection and prevention system that combines a real-time fraud detection model with an interactive dashboard. The system is designed to identify and analyze fraudulent activities using advanced machine learning techniques, providing users with actionable insights to mitigate risks.",
+        "An end-to-end fraud detection platform integrating a machine learning inference engine with an interactive web dashboard, enabling real-time transaction monitoring and data-driven risk mitigation strategies.",
       tech: ["React.js", "Python", "Random Forest", "Fraud Detection Model"],
       image: "./assets/img/ccfraud.jpg",
       demoUrl: "https://drive.google.com/file/d/1hxMuwsLZJyV2lhSK-j2DZbY66V04jI48/view?usp=drive_link",
@@ -80,7 +80,7 @@ const PORTFOLIO_DATA = {
       category: "web",
       categoryLabel: "Web & AI",
       description:
-        "Platform predictive maintenance full-stack berbasis AI untuk kebutuhan industri (250 jam pengembangan, nilai 94/100). Mengintegrasikan frontend React, backend RESTful API, dan model machine learning secara end-to-end.",
+        "Full-stack AI-driven predictive maintenance platform designed for industrial needs (250 engineering hours, module score 94/100). End-to-end integration of React frontend, RESTful API backend, and ML models.",
       tech: ["React.js", "Node.js", "REST API", "Predictive AI"],
       image: "./assets/img/maintify.jpg",
       demoUrl: "https://drive.google.com/file/d/1hxMuwsLZJyV2lhSK-j2DZbY66V04jI48/view?usp=drive_link",
@@ -92,7 +92,7 @@ const PORTFOLIO_DATA = {
       category: "ai",
       categoryLabel: "AI & Computer Vision",
       description:
-        "Membangun pipeline Computer Vision end-to-end sebagai Model Builder menggunakan arsitektur Custom CNN dan TensorFlow (skor modul 96/100), terintegrasi penuh dengan sistem backend dan frontend tim.",
+        "Engineered an end-to-end Computer Vision pipeline as Model Builder using custom CNN architecture and TensorFlow (module score 96/100), fully integrated with the team's backend and frontend systems.",
       tech: ["Python", "TensorFlow", "Custom CNN", "OCR"],
       image: "./assets/img/fast.jpg",
       demoUrl: "https://drive.google.com/file/d/1cX3s9lPkEDFGJdyDVnpbdvQYR7swC2qi/view?usp=drive_link",
@@ -104,7 +104,7 @@ const PORTFOLIO_DATA = {
       category: "ai",
       categoryLabel: "AI & Machine Learning",
       description:
-        "Aplikasi web interaktif untuk memprediksi kelayakan pinjaman UMKM beserta penjelasan berbasis risiko. Mengevaluasi Logistic Regression, Random Forest, dan memilih XGBoost sebagai model terbaik berdasarkan F1-score.",
+        "Interactive web application evaluating MSME creditworthiness with explainable risk metrics. Benchmarked Logistic Regression and Random Forest, deploying XGBoost as top model based on F1-score.",
       tech: ["XGBoost", "Scikit-Learn", "Python", "Gen AI"],
       image: "./assets/img/loanapproval.jpg",
       demoUrl: "https://drive.google.com/file/d/17WhWDURwhszDvcfnNruHOq_iRSxW9TYU/view?usp=drive_link",
@@ -116,7 +116,7 @@ const PORTFOLIO_DATA = {
       category: "data",
       categoryLabel: "Data & BI",
       description:
-        "Mengelola 1 juta+ baris data penjualan, performa cabang, dan inventaris di Google BigQuery (efisiensi naik 30%). Memvisualisasikan 600.000+ transaksi di Looker Studio yang mempercepat pengambilan keputusan bisnis hingga 35%.",
+        "Managed 1M+ rows of sales, branch performance, and inventory data on Google BigQuery (boosting query efficiency by 30%). Visualized 600K+ transactions in Looker Studio, speeding up strategic decisions by 35%.",
       tech: ["Google BigQuery", "SQL", "Looker Studio", "Data Cleaning"],
       image: "./assets/img/kf-bigdata.jpg",
       demoUrl: "https://drive.google.com/file/d/1Sf56a0CdFYfn1g1otqlCVpY3v3wJNVgp/view?usp=drive_link",
@@ -128,7 +128,7 @@ const PORTFOLIO_DATA = {
       category: "data",
       categoryLabel: "Data & BI",
       description:
-        "Mengintegrasikan 4 dataset (3.300+ baris) menjadi master table dengan akurasi 100% di Google Colab & Python, serta membangun dashboard interaktif Looker Studio untuk 11.000+ transaksi penjualan.",
+        "Consolidated 4 complex datasets (3,300+ rows) into a master table with 100% accuracy using Python & Google Colab, and built interactive Looker Studio dashboards analyzing 11,000+ sales transactions.",
       tech: ["Python", "Google Colab", "Looker Studio", "BI Strategy"],
       image: "./assets/img/bm-sales.jpg",
       demoUrl: "https://drive.google.com/file/d/1OcJAEChQblz5W9FOd4Hjcr2Ffu87pDJR/view?usp=drive_link",
@@ -136,52 +136,52 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  // 1. Pengalaman Kerja
+  // 1. Work Experience
   workExperiences: [
     {
       role: "Digital Center of Excellence (CoE) Intern",
       company: "PT Pegadaian",
-      period: "Jan 2026 – Sekarang",
-      location: "Jakarta Metropolitan Area",
+      period: "Jan 2026 – Present",
+      location: "Jakarta Metropolitan Area, Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Mengevaluasi lebih dari 10 Proof of Concept (PoC) strategis bersama 10+ vendor global, mempercepat adopsi teknologi tepat guna dan berpotensi menekan inefisiensi anggaran IT hingga 25%.",
-        "Mengembangkan dashboard real-time dan otomatisasi workflow dengan Looker Studio & Apps Script, memangkas waktu pelaporan manual hingga 40%.",
-        "Mengelola penyelesaian tiket infrastruktur IT dengan tingkat keberhasilan 100% serta mengoordinasikan acara divisi berskala 70+ karyawan dengan tingkat kepuasan 95%."
+        "Evaluated 10+ strategic Proof of Concepts (PoC) with 10+ global technology vendors, accelerating adoption and mitigating potential IT budget inefficiencies by up to 25%.",
+        "Engineered real-time dashboards and automated reporting workflows via Looker Studio & Google Apps Script, reducing manual reporting cycles by 40%.",
+        "Managed IT infrastructure support tickets with 100% resolution rate and organized division-wide events for 70+ employees achieving 95% satisfaction rate."
       ]
     },
     {
       role: "Data Management Support",
-      company: "Kementerian Perhubungan Republik Indonesia",
+      company: "Ministry of Transportation of the Republic of Indonesia",
       period: "Jul 2025 – Sep 2025",
-      location: "Jakarta Pusat, Indonesia",
+      location: "Central Jakarta, Indonesia",
       image: "./assets/img/kemenhub2025.jpg",
       points: [
-        "Mengelola dan memvalidasi 800+ baris data pelabuhan nasional menggunakan Excel & Google Sheets (efisiensi pengolahan data naik 20%).",
-        "Mengoptimalkan SOP manajemen data yang mempercepat integrasi lintas unit sebesar 30%, serta merancang alur integrasi sistem SIMPEL, SIPANDU, dan SIFASPEL.",
-        "Membangun dashboard interaktif menggunakan Tableau untuk visualisasi distribusi pelabuhan Indonesia di tingkat direktorat."
+        "Managed and validated 800+ national port data records using Excel & Google Sheets, improving data processing efficiency by 20%.",
+        "Optimized data governance SOPs accelerating cross-unit integration by 30%, and mapped system data integration pipelines for SIMPEL, SIPANDU, and SIFASPEL.",
+        "Built interactive Tableau dashboards for national port distribution and operational tracking at directorate level."
       ]
     },
     {
       role: "Business Analyst",
       company: "Tape Koe",
       period: "Jun 2024 – Jun 2025",
-      location: "Kab. Bekasi, Jawa Barat",
+      location: "Bekasi Regency, West Java, Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Mengevaluasi performa bisnis melalui analisis data keuangan dan penjualan yang menghasilkan peningkatan profitabilitas sebesar 25% pada bulan pertama.",
-        "Menyusun strategi bisnis terarah yang meningkatkan efisiensi operasional sebesar 30%, menekan biaya 15%, dan mendukung target pertumbuhan tahunan 40%."
+        "Evaluated business performance by conducting financial and sales data analyses, delivering a 25% profitability increase within the first month.",
+        "Formulated data-backed business strategies optimizing operational efficiency by 30%, reducing costs by 15%, and supporting 40% annual growth goals."
       ]
     },
     {
       role: "Junior Data Scientist",
       company: "VINIX7",
-      period: "Feb 2025 – Mei 2025",
+      period: "Feb 2025 – May 2025",
       location: "Remote",
       image: "./assets/img/vinix7.jpg",
       points: [
-        "Menganalisis 9 modul proyek data menggunakan Excel, Python, dan Tableau dari 100+ respons pengguna (mempercepat interpretasi data hingga 50%).",
-        "Membangun model prediktif (regresi, k-NN, k-Means) dengan Orange & Python yang mencapai akurasi hingga 84% dan menghasilkan 3+ segmen pengguna."
+        "Analyzed 9 data project modules utilizing Excel, Python, and Tableau from 100+ user responses, cutting insight generation turnaround by 50%.",
+        "Developed predictive and segmentation models (regression, k-NN, k-Means) achieving up to 84% accuracy and identifying 3+ distinct user personas."
       ]
     },
     {
@@ -191,7 +191,7 @@ const PORTFOLIO_DATA = {
       location: "Jakarta, Indonesia",
       image: "./assets/img/bm-cert.jpg",
       points: [
-        "Mengelola 4 dataset (3.300+ baris) menggunakan Python & Google Colab dengan akurasi 100% dan membangun dashboard Looker Studio untuk 11.000+ transaksi penjualan."
+        "Cleaned and engineered 4 transaction datasets (3,300+ rows) with Python & Google Colab at 100% precision, delivering interactive Looker Studio sales performance dashboards for 11,000+ transactions."
       ]
     },
     {
@@ -201,47 +201,47 @@ const PORTFOLIO_DATA = {
       location: "Jakarta, Indonesia",
       image: "./assets/img/kf-cert.jpg",
       points: [
-        "Mengoptimalkan query SQL atas 1 juta+ baris data di Google BigQuery (efisiensi naik 30%) dan memvisualisasikan 600.000+ transaksi di Looker Studio."
+        "Optimized SQL queries across 1M+ sales records on Google BigQuery (increasing query execution efficiency by 30%) and built multi-dimensional Looker Studio executive dashboards for 600K+ transactions."
       ]
     }
   ],
 
-  // 2. Pendidikan
+  // 2. Education
   educations: [
     {
-      role: "S1 Teknologi Informasi (Bachelor's Degree)",
-      company: "Universitas Telkom (Telkom University)",
+      role: "B.S. in Information Technology (Bachelor's Degree)",
+      company: "Telkom University",
       period: "2023 – 2027",
       location: "Jakarta / Bandung, Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Mahasiswa tingkat akhir dengan fokus pada Data Analytics, Business Intelligence, Cloud Computing, dan Artificial Intelligence.",
-        "Peraih 3x penghargaan Best Participant/Student di Talent Class (Cloud Computing Batch 15, Data Science Batch 16, Excel for BI Batch 19)."
+        "Senior undergraduate student focusing on Data Analytics, Business Intelligence, Cloud Computing, and Artificial Intelligence.",
+        "Recipient of 3x Best Participant / Top Student Awards in Talent Class (Cloud Computing Batch 15, Data Science Fundamentals Batch 16, Excel for BI Batch 19)."
       ]
     },
     {
       role: "Public Speaking Certification Program",
       company: "PR Institute",
-      period: "Sep 2024 – Des 2024",
+      period: "Sep 2024 – Dec 2024",
       location: "Indonesia",
       image: "./assets/img/prinstitute.jpg",
       points: [
-        "Mempelajari komunikasi persuasif, presentasi eksekutif, dan penyampaian insight data secara efektif kepada pemangku kepentingan."
+        "Trained in persuasive business communication, executive presentation, and effective data storytelling for cross-functional stakeholders."
       ]
     },
     {
-      role: "Komunikasi Digital dan Media / Multimedia",
+      role: "Digital Communication & Multimedia",
       company: "SMKN 1 Cibinong",
-      period: "Jul 2020 – Mei 2023",
-      location: "Kab. Bogor, Jawa Barat",
+      period: "Jul 2020 – May 2023",
+      location: "Bogor Regency, West Java, Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Mempelajari dasar desain komunikasi visual, produksi multimedia, pengolahan video, dan teknologi digital."
+        "Studied visual communication design fundamentals, digital multimedia production, video editing, and interactive technologies."
       ]
     }
   ],
 
-  // 3. Bootcamp (Cohort diubah menjadi Bootcamp)
+  // 3. Bootcamp
   bootcamps: [
     {
       role: "AI Engineer Bootcamp (Top 10% Distinction Graduate)",
@@ -250,55 +250,55 @@ const PORTFOLIO_DATA = {
       location: "Indonesia",
       image: "./assets/img/codingcamp2026.jpg",
       points: [
-        "Lulus dengan predikat Distinction (Top 10% dari 2.800 peserta terpilih) tepat waktu tanpa catatan pelanggaran.",
-        "Meraih nilai hampir sempurna (96/100) pada modul Build Advanced Deep Learning Projects (Custom CNN, Custom Training Loop, Custom Layers/Loss dengan TensorFlow).",
-        "Berperan sebagai Model Builder pada proyek Capstone FAST (Fintech OCR) dan meraih skor CEFR B2 (82%) serta nilai 90/100 pada 7 modul Soft Skills & Career Development."
+        "Graduated with Distinction (Top 10% among 2,800 selected participants nationwide) on schedule with exemplary standing.",
+        "Scored near-perfect (96/100) in Build Advanced Deep Learning Projects (Custom CNN, Custom Training Loops, Custom Layers/Loss with TensorFlow).",
+        "Served as Model Builder for Capstone FAST (Fintech OCR), achieved CEFR B2 (82%) in English, and scored 90/100 across 7 Soft Skills & Career Development modules."
       ]
     },
     {
       role: "React & Back End with AI Bootcamp",
       company: "Asah led by Dicoding",
-      period: "Agu 2025 – Jan 2026",
+      period: "Aug 2025 – Jan 2026",
       location: "Indonesia",
       image: "./assets/img/asah2025.jpg",
       points: [
-        "Mengembangkan platform full-stack predictive maintenance berbasis AI (Maintify) sebagai Capstone Project (250 jam, skor 94/100).",
-        "Membangun Open Music RESTful API dengan JWT, Redis caching, dan RabbitMQ (skor 86/100) serta aplikasi web React interaktif (skor 91/100 & 94/100)."
+        "Engineered full-stack AI predictive maintenance platform (Maintify) as Capstone Project (250 hours, scored 94/100).",
+        "Built Open Music RESTful API using JWT, Redis caching, and RabbitMQ (scored 86/100) and developed interactive React web applications (scored 91/100 & 94/100)."
       ]
     },
     {
       role: "Data Science & Generative AI Bootcamp",
       company: "Celerates",
-      period: "Sep 2025 – Des 2025",
+      period: "Sep 2025 – Dec 2025",
       location: "Indonesia",
       image: "./assets/img/camp2025.jpg",
       points: [
-        "Menyelesaikan program intensif 4 bulan dengan nilai akhir 94.70 (Grade A) mencakup 7 modul inti Data Science hingga Generative AI.",
-        "Merancang dan merilis proyek akhir 'AI-Powered Loan Approval Simulator for MSMEs' menggunakan model terbaik XGBoost."
+        "Completed rigorous 4-month program with 94.70/100 (Grade A) spanning 7 core modules from exploratory data science to Generative AI.",
+        "Designed and published final project 'AI-Powered Loan Approval Simulator for MSMEs' using fine-tuned XGBoost model."
       ]
     }
   ],
 
-  // 4. Organisasi
+  // 4. Organizations
   organizations: [
     {
       role: "Google Student Ambassador",
       company: "Google",
-      period: "Okt 2026 – Sekarang",
+      period: "Oct 2026 – Present",
       location: "Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Terpilih sebagai Google Student Ambassador yang menjembatani ekosistem teknologi Google dengan komunitas mahasiswa di kampus."
+        "Selected as Google Student Ambassador bridging Google's technology ecosystem and developer resources with the university student community."
       ]
     },
     {
       role: "Core Team Creative Division",
       company: "Google Developer Student Clubs (GDSC) Telkom University Jakarta",
-      period: "Des 2023 – Des 2024",
-      location: "Jakarta Selatan, Indonesia",
+      period: "Dec 2023 – Dec 2024",
+      location: "South Jakarta, Indonesia",
       image: "./assets/img/experience-placeholder.svg",
       points: [
-        "Aktif mengelola kebutuhan kreatif, branding visual, dan publikasi kegiatan komunitas developer mahasiswa selama 1 tahun."
+        "Actively led creative assets, visual branding, and publication media for student developer initiatives and tech meetups for 1 year."
       ]
     }
   ]
@@ -353,7 +353,7 @@ function renderSkills() {
                 <span>${skill.name}</span>
                 <span class="skill-percent">${skill.level}%</span>
               </div>
-              <div class="skill-bar-track" role="progressbar" aria-valuenow="${skill.level}" aria-valuemin="0" aria-valuemax="100" aria-label="Keahlian ${skill.name}">
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="${skill.level}" aria-valuemin="0" aria-valuemax="100" aria-label="${skill.name} skill level">
                 <div class="skill-bar-fill" data-width="${skill.level}%"></div>
               </div>
             </div>
@@ -367,7 +367,7 @@ function renderSkills() {
     .join("");
 }
 
-// Render Kartu Proyek berdasarkan Filter Kategori
+// Render Project Cards by Category Filter
 function renderProjects(filterCategory = "all") {
   const container = document.getElementById("projectsContainer");
   if (!container) return;
@@ -385,7 +385,7 @@ function renderProjects(filterCategory = "all") {
           <span class="project-category-badge">${project.categoryLabel}</span>
           <img 
             src="${project.image}" 
-            alt="Ilustrasi proyek ${project.title}" 
+            alt="Preview of ${project.title}" 
             loading="lazy" 
             width="400" 
             height="220"
@@ -399,11 +399,11 @@ function renderProjects(filterCategory = "all") {
             ${project.tech.map((t) => `<span class="tech-tag">${t}</span>`).join("")}
           </div>
           <div class="project-links">
-            <a href="${project.demoUrl}" ${project.demoUrl.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""} class="project-link-btn link-demo" aria-label="Lihat detail atau demo ${project.title}">
+            <a href="${project.demoUrl}" ${project.demoUrl.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""} class="project-link-btn link-demo" aria-label="View demo or details of ${project.title}">
               <i data-lucide="external-link"></i>
-              <span>Lihat Proyek</span>
+              <span>View Project</span>
             </a>
-            <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link-btn link-repo" aria-label="Buka repositori GitHub ${project.title}">
+            <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link-btn link-repo" aria-label="Open GitHub repository for ${project.title}">
               <i data-lucide="github"></i>
               <span>GitHub</span>
             </a>
@@ -417,7 +417,7 @@ function renderProjects(filterCategory = "all") {
   initLucideIcons();
 }
 
-// Render Timeline Pengalaman Kerja, Pendidikan, Bootcamp & Organisasi
+// Render Timeline for Work Experience, Education, Bootcamp & Organization
 function renderTimelines() {
   const workContainer = document.getElementById("workTimeline");
   const eduContainer = document.getElementById("educationTimeline");
@@ -451,12 +451,12 @@ function renderTimelines() {
               <div class="timeline-img-box">
                 <img 
                   src="${item.image || './assets/img/experience-placeholder.svg'}" 
-                  alt="Dokumentasi ${item.role} - ${item.company}" 
+                  alt="Documentation of ${item.role} - ${item.company}" 
                   class="timeline-img" 
                   loading="lazy"
                 />
                 <span class="timeline-img-badge">
-                  <i data-lucide="image"></i> Dokumentasi
+                  <i data-lucide="image"></i> Media
                 </span>
               </div>
             </div>
@@ -537,8 +537,8 @@ function initNavbarAndScrollSpy() {
         scrollProgressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
       }
 
-      // 3. Scroll-Spy (Update Link Aktif)
-      let currentSectionId = "beranda";
+      // 3. Scroll-Spy (Update Active Link)
+      let currentSectionId = "home";
       sections.forEach((sec) => {
         const sectionTop = sec.offsetTop - 130;
         const sectionHeight = sec.offsetHeight;
@@ -744,16 +744,16 @@ function initContactForm() {
     const message = document.getElementById("senderMessage").value.trim();
 
     if (!name || !email || !subject || !message) {
-      statusEl.textContent = "Mohon lengkapi seluruh kolom yang wajib diisi (*).";
+      statusEl.textContent = "Please complete all required fields (*).";
       statusEl.style.color = "#D9534F";
       return;
     }
 
     const accessKey = accessKeyInput ? accessKeyInput.value.trim() : "";
 
-    // Jika Access Key Web3Forms sudah diisi oleh pemilik web, kirim via API statis
+    // If Web3Forms Access Key is provided, submit through static API
     if (accessKey !== "") {
-      statusEl.textContent = "Sedang mengirim pesan...";
+      statusEl.textContent = "Sending message...";
       statusEl.style.color = "var(--secondary)";
 
       try {
@@ -765,19 +765,19 @@ function initContactForm() {
         const result = await response.json();
 
         if (result.success) {
-          statusEl.textContent = "Terima kasih! Pesan Anda berhasil terkirim.";
+          statusEl.textContent = "Thank you! Your message has been sent successfully.";
           statusEl.style.color = "var(--primary)";
           form.reset();
         } else {
-          throw new Error("Gagal mengirim.");
+          throw new Error("Failed to send.");
         }
       } catch (err) {
-        statusEl.textContent = "Terjadi kendala jaringan, mengalihkan ke aplikasi email...";
+        statusEl.textContent = "Network error encountered, opening your email app...";
         openMailtoFallback(name, email, subject, message);
       }
     } else {
-      // Default Fallback: langsung buka aplikasi email pengguna (mailto:) tanpa perlu backend
-      statusEl.textContent = "Membuka aplikasi email Anda untuk mengirim pesan...";
+      // Default Fallback: open default mail client (mailto:)
+      statusEl.textContent = "Opening your email app to send the message...";
       statusEl.style.color = "var(--primary)";
       openMailtoFallback(name, email, subject, message);
       form.reset();
@@ -787,7 +787,7 @@ function initContactForm() {
 
 function openMailtoFallback(name, email, subject, message) {
   const recipient = "fadhilahmadraja@gmail.com";
-  const body = `Halo Ahmad Raja Fadhil,\n\nSaya ${name} (${email}) ingin menyampaikan pesan:\n\n${message}\n\nSalam hangat,\n${name}`;
+  const body = `Hi Ahmad Raja Fadhil,\n\nMy name is ${name} (${email}) and I would like to reach out regarding:\n\n${message}\n\nWarm regards,\n${name}`;
   const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoUrl;
 }
